@@ -38,8 +38,9 @@
 
 - Replace typography/button demo content with a real introduction, selected
   projects, useful descriptions, and contact information.
-- Implement linked routes before adding them to the sitemap. Work, About,
-  Blog, and Contact currently point to pages that are not yet implemented.
+- Work, About, Blog, and Contact currently show localized coming-soon pages
+  with `noindex`. Replace these with real content and update their metadata
+  before adding them to the sitemap.
 - Give each new page its own title, description, canonical URL, localized
   alternatives, and appropriate share metadata. Homepage canonicals live in
   the homepage file, not a parent layout, to prevent accidental inheritance.

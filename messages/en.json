@@ -53,5 +53,10 @@
     "menu": "Menu",
     "socialTitle": "Social",
     "license": "License"
+  },
+  "PendingPage": {
+    "status": "Coming soon",
+    "description": "This part of my portfolio is still being prepared. Check back soon for updates.",
+    "back": "Back to home"
   }
 }

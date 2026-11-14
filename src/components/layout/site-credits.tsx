@@ -9,20 +9,20 @@ export async function SiteCredits({locale}: {locale: string}) {
     <>
       <div className="grid content-start gap-6 md:row-span-2 md:grid-rows-subgrid">
       <section aria-label={t("typeface")}>
-        <h3 className={headingClass}>{t("typeface")}</h3>
+        <h2 className={headingClass}>{t("typeface")}</h2>
         <ul className="space-y-3">
           <li><a target="_blank" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans" className={linkClass} rel="noopener noreferrer">Plus Jakarta Sans</a></li>
           <li><a target="_blank" href="https://fonts.google.com/specimen/JetBrains+Mono" className={linkClass} rel="noopener noreferrer">JetBrains Mono</a></li>
         </ul>
       </section>
       <section aria-label={t("weather")}>
-        <h3 className={headingClass}>{t("weather")}</h3>
+        <h2 className={headingClass}>{t("weather")}</h2>
         <a target="_blank" href="https://openweathermap.org/" className={linkClass} rel="noopener noreferrer">OpenWeather</a>
       </section>
       </div>
       <div className="grid content-start gap-6 md:row-span-2 md:grid-rows-subgrid">
       <section aria-label={t("icons")}>
-        <h3 className={headingClass}>{t("icons")}</h3>
+        <h2 className={headingClass}>{t("icons")}</h2>
         <ul className="space-y-3">
           <li><a target="_blank" href="https://www.figma.com/community/file/1166831539721848736" className={linkClass} rel="noopener noreferrer">Solar Icons</a></li>
           <li><a target="_blank" href="https://www.figma.com/community/file/1166831539721848736" className={linkClass} rel="noopener noreferrer">480 Design</a></li>
@@ -30,7 +30,7 @@ export async function SiteCredits({locale}: {locale: string}) {
         </ul>
       </section>
       <section aria-label={t("logos")}>
-        <h3 className={headingClass}>{t("logos")}</h3>
+        <h2 className={headingClass}>{t("logos")}</h2>
         <ul className="space-y-3">
           <li><a target="_blank" href="https://thesvg.org/" className={linkClass} rel="noopener noreferrer">theSVG</a></li>
           <li><a target="_blank" href="https://github.com/glincker/thesvg/blob/main/LICENSE" className={linkClass} rel="license noopener noreferrer">MIT License</a></li>

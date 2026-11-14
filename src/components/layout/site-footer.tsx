@@ -26,14 +26,14 @@ export async function SiteFooter({locale}: {locale: string}) {
           </div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-8 text-sm md:grid-cols-[repeat(4,max-content)] md:grid-rows-[auto_auto] md:gap-y-6 md:justify-normal md:gap-x-20 xl:justify-self-end xl:pt-1">
             <nav aria-label={t("navigation")} className="md:row-span-2">
-              <h3 className="mb-4 font-medium text-foreground">{t("menu")}</h3>
+              <h2 className="mb-4 font-medium text-foreground">{t("menu")}</h2>
               <ul className="space-y-3">
                 {headerNavigation.map((item) => <li key={item.href}><Link target="_blank" href={item.href} className={externalLinkClass} rel="noopener noreferrer">{nav(item.title)}</Link></li>)}
               </ul>
             </nav>
             <SiteCredits locale={locale} />
             <nav aria-label={t("socials")} className="md:row-span-2">
-              <h3 className="mb-4 font-medium text-foreground">{t("socialTitle")}</h3>
+              <h2 className="mb-4 font-medium text-foreground">{t("socialTitle")}</h2>
               <ul className="flex flex-wrap items-center gap-3">
                 {socialLinks.filter((social) => social.href).map((social) => <li key={social.platform}><a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} title={social.label} className={`group inline-flex rounded-md ${externalLinkClass}`}><IconTile className="size-7 transition-colors group-hover:text-foreground [&_svg]:size-5"><SocialIcon platform={social.platform} /></IconTile></a></li>)}
               </ul>

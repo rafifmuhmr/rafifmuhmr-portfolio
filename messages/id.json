@@ -53,5 +53,10 @@
     "menu": "Menu",
     "socialTitle": "Sosial",
     "license": "Lisensi"
+  },
+  "PendingPage": {
+    "status": "Segera hadir",
+    "description": "Bagian portofolio ini sedang saya siapkan. Kunjungi kembali untuk melihat pembaruan berikutnya.",
+    "back": "Kembali ke beranda"
   }
 }
