@@ -1,7 +1,8 @@
 "use client";
 
 import {useId, useRef, useSyncExternalStore, type ReactNode} from "react";
-import {AnimatePresence, motion, useReducedMotion} from "motion/react";
+import {AnimatePresence, useReducedMotion} from "motion/react";
+import * as m from "motion/react-m";
 import {WidgetIcon as Grid2X2} from "@solar-icons/react/outline";
 import {CloseIcon as X} from "@solar-icons/react/linear";
 import {useTranslations} from "next-intl";
@@ -38,7 +39,7 @@ export function LocalStatusPanel({children}: {children: ReactNode}) {
     }}>
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <m.div
             key="local-status"
             id={id}
             role="region"
@@ -50,7 +51,7 @@ export function LocalStatusPanel({children}: {children: ReactNode}) {
             className="mr-12 w-fit max-w-[calc(100%-3rem)] origin-top-right"
           >
             {children}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
       <Tooltip>
@@ -66,9 +67,9 @@ export function LocalStatusPanel({children}: {children: ReactNode}) {
         onClick={() => open ? close() : setOpen(true)}
       />}>
 
-        <motion.span animate={{rotate: open ? 90 : 0}} transition={{duration: reduced ? 0 : 0.2}}>
+        <m.span animate={{rotate: open ? 90 : 0}} transition={{duration: reduced ? 0 : 0.2}}>
           {open ? <X className="size-4" aria-hidden="true" /> : <Grid2X2 className="size-4" aria-hidden="true" />}
-        </motion.span>
+        </m.span>
       </TooltipTrigger>
       <TooltipContent side="bottom" align="end" sideOffset={8} className="px-3 py-2">
         {open ? t("close") : t("title")}

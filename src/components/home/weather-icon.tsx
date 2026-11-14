@@ -1,6 +1,7 @@
 "use client";
 
-import {AnimatePresence, motion, useReducedMotion} from "motion/react";
+import {AnimatePresence, useReducedMotion} from "motion/react";
+import * as m from "motion/react-m";
 
 import {CloudIcon as Cloud, FogIcon as CloudFog, CloudBoltIcon as CloudLightning, CloudRainIcon as CloudRain, CloudSnowfallIcon as CloudSnow, CloudSunIcon as CloudSun, MoonIcon as Moon, SunIcon as Sun} from "@solar-icons/react/linear";
 
@@ -21,9 +22,9 @@ export function WeatherIcon({code, night}: {code: number; night: boolean}) {
   return (
     <span className="relative inline-flex size-14 shrink-0 overflow-hidden" aria-hidden="true">
       <AnimatePresence initial={false} mode="popLayout">
-        <motion.span key={key} initial={{y: reduced ? 0 : 8, opacity: 0}} animate={{y: 0, opacity: 1}} exit={{y: reduced ? 0 : -8, opacity: 0}} transition={{duration: reduced ? 0 : 0.2}} className="inline-flex size-14">
+        <m.span key={key} initial={{y: reduced ? 0 : 8, opacity: 0}} animate={{y: 0, opacity: 1}} exit={{y: reduced ? 0 : -8, opacity: 0}} transition={{duration: reduced ? 0 : 0.2}} className="inline-flex size-14">
           <WeatherGlyph code={code} night={night} />
-        </motion.span>
+        </m.span>
       </AnimatePresence>
     </span>
   );

@@ -1,7 +1,8 @@
 "use client";
 
 import {useSyncExternalStore} from "react";
-import {AnimatePresence, motion, useReducedMotion} from "motion/react";
+import {AnimatePresence, useReducedMotion} from "motion/react";
+import * as m from "motion/react-m";
 import {Separator} from "@/components/ui/separator";
 import {useTranslations} from "next-intl";
 import {location} from "@/config/location";
@@ -25,9 +26,9 @@ function ClockNumber({value}: {value: string}) {
   const reduced = useReducedMotion();
   return <span className="relative inline-flex h-5 w-[2ch] overflow-hidden align-bottom">
     <AnimatePresence initial={false} mode="popLayout">
-      <motion.span key={value} initial={{y: reduced ? 0 : 8, opacity: 0}} animate={{y: 0, opacity: 1}} exit={{y: reduced ? 0 : -8, opacity: 0}} transition={{duration: reduced ? 0 : 0.2}} className="inline-block">
+      <m.span key={value} initial={{y: reduced ? 0 : 8, opacity: 0}} animate={{y: 0, opacity: 1}} exit={{y: reduced ? 0 : -8, opacity: 0}} transition={{duration: reduced ? 0 : 0.2}} className="inline-block">
         {value}
-      </motion.span>
+      </m.span>
     </AnimatePresence>
   </span>;
 }

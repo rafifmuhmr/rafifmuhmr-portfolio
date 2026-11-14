@@ -1,7 +1,8 @@
 "use client";
 
 import {useSyncExternalStore} from "react";
-import {AnimatePresence, motion, useReducedMotion} from "motion/react";
+import {AnimatePresence, useReducedMotion} from "motion/react";
+import * as m from "motion/react-m";
 import {ArrowUpIcon} from "@solar-icons/react/linear";
 import {useTranslations} from "next-intl";
 import {Button} from "@/components/ui/button";
@@ -40,7 +41,7 @@ export function ScrollToTop() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
+        <m.div
           key="scroll-to-top"
           initial={{opacity: 0, y: reduced ? 0 : 12, scale: reduced ? 1 : 0.9}}
           animate={{opacity: 1, y: 0, scale: 1}}
@@ -68,7 +69,7 @@ export function ScrollToTop() {
             </TooltipContent>
           </Tooltip>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

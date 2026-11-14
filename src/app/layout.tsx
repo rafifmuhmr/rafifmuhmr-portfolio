@@ -3,6 +3,7 @@ import {site, isPreview} from "@/config/site";
 import {TooltipProvider} from "@/components/ui/tooltip";
 import {JetBrains_Mono, Plus_Jakarta_Sans} from "next/font/google";
 import {getLocale} from "next-intl/server";
+import {MotionProvider} from "@/components/motion-provider";
 import {ThemeProvider} from "@/components/theme-provider";
 import "./globals.css";
 
@@ -36,7 +37,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
     <html lang={locale} suppressHydrationWarning className={`${jakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <TooltipProvider>{children}</TooltipProvider>
+          <MotionProvider><TooltipProvider>{children}</TooltipProvider></MotionProvider>
         </ThemeProvider>
       </body>
     </html>
