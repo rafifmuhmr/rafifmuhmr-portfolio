@@ -5,7 +5,7 @@ import {getTranslations} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {socialLinks, instagramUrl} from "@/config/socials";
 import {headerNavigation} from "./header-navigation";
-import {HalftoneWordmark} from "./halftone-wordmark";
+import {DeferredWordmark} from "./deferred-wordmark";
 import {SiteCredits} from "./site-credits";
 
 const externalLinkClass = "text-muted-foreground transition-colors hover:text-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring";
@@ -46,7 +46,7 @@ export async function SiteFooter({locale}: {locale: string}) {
           <p className="flex flex-col gap-1 font-medium"><span>© <span className="font-mono tabular-nums">{new Date().getFullYear()}</span> rafifmuhmr.</span><span>{t("rights")}</span></p>
           <p className="flex shrink-0 flex-col items-end gap-1 text-right"><span>Crafted by</span>{instagramUrl ? <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline-offset-4 decoration-1 [text-decoration-skip-ink:none] hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">@rafifmuhmr</a> : "@rafifmuhmr"}</p>
         </div>
-        <HalftoneWordmark />
+        <DeferredWordmark />
       </div>
     </footer>
   );

@@ -16,6 +16,7 @@ A personal portfolio by Rafif, showcasing frontend development, UI/UX design, se
 - **Interface animations:** panel, clock, temperature, and weather icon transitions, with reduced-motion support.
 - **Portfolio footer:** navigation, social profiles, asset credits, copyright, and an interactive halftone wordmark.
 - **Scroll-to-top control:** positioned above the footer on desktop and beneath the Social section on mobile.
+- **SEO foundation:** localized metadata, canonical and hreflang URLs, sitemap, robots, JSON-LD, static Open Graph cards, and preview indexing controls.
 - **Typography:** Plus Jakarta Sans and JetBrains Mono, with ligatures disabled.
 
 ## Technology Stack
@@ -183,12 +184,18 @@ git status --short
 
 Ensure `.env.local`, `node_modules`, `.next`, and `.vercel` are not staged. Commit `bun.lock` and `.env.example` to keep project setup reproducible.
 
+## Search and Social Previews
+
+Production URLs are configured in `src/config/site.ts`. Update this value when moving to a custom domain. Optional Search Console verification uses `GOOGLE_SITE_VERIFICATION`.
+
+See [`docs/seo-launch.md`](./docs/seo-launch.md) for indexing, metadata validation, link-preview checks, and performance measurement. Static share images can be regenerated with `bun scripts/generate-social-images.tsx`.
+
 ## Roadmap
 
 - Replace placeholder content with the hero and portfolio sections.
 - Add work, about, blog, and contact pages.
 - Integrate a CMS and content management dashboard.
-- Complete production SEO metadata, sitemap generation, and content.
+- Extend SEO metadata and the sitemap as real portfolio pages are published.
 
 These items describe planned work and are not implemented features.
 
