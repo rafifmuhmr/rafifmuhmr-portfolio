@@ -125,7 +125,6 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
         >
           <div className="grid h-14 grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[1fr_auto_1fr]">
             <Link
-              target="_blank"
               href="/"
               aria-label={t("home")}
               onNavigate={closeMobileMenu}
@@ -135,7 +134,7 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
                 "motion-reduce:transition-none",
                 "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               )}
-              rel="noopener noreferrer"
+             
             >
               <Image
                 src="/rafifmuhmr-logo.svg"
@@ -166,8 +165,7 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
               />
 
               <Link
-                target="_blank"
-                href="/contact"
+                  href="/contact"
                 className={cn(
                   buttonVariants({
                     variant: "default",
@@ -175,7 +173,7 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
                   }),
                   "w-28 rounded-lg"
                 )}
-                rel="noopener noreferrer"
+               
               >
                 {t("cta")}
               </Link>

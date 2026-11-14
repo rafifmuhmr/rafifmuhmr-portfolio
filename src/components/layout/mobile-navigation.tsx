@@ -29,11 +29,11 @@ export function MobileNavigation({
       <ul className="divide-y">
         {headerNavigation.map((item) => (
           <li key={item.href}>
-            <Link target="_blank"
+            <Link
               href={item.href}
               onNavigate={onNavigate}
               className="block rounded-md py-5 text-base font-medium transition-colors hover:text-muted-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
-             rel="noopener noreferrer">
+            >
               {t(item.title)}
             </Link>
           </li>
@@ -41,7 +41,7 @@ export function MobileNavigation({
       </ul>
 
       <div className="border-t pt-6">
-        <Link target="_blank"
+        <Link
           href="/contact"
           onNavigate={onNavigate}
           className={cn(
@@ -50,7 +50,7 @@ export function MobileNavigation({
               size: "lg",
             })
           )}
-         rel="noopener noreferrer">
+        >
           {t("cta")}
         </Link>
       </div>

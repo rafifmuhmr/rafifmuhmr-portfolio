@@ -12,10 +12,10 @@ export function DesktopNavigation() {
       <ul className="flex items-center">
         {headerNavigation.map((item) => (
           <li key={item.href}>
-            <Link target="_blank"
+            <Link
               href={item.href}
               className="inline-flex h-9 w-22 whitespace-nowrap items-center justify-center rounded-lg px-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-             rel="noopener noreferrer">
+            >
               {t(item.title)}
             </Link>
           </li>
