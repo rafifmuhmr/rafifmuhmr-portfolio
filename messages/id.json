@@ -17,7 +17,7 @@
   },
   "Home": {
     "title": "Rafif Muhammad Muflihur Rodwa",
-    "description": "Pengembang Frontend & Desainer UI/UX",
+    "description": "Desainer UI/UX, Frontend Developer & Desainer Grafis",
     "primary": "Utama",
     "outline": "Outline",
     "ghost": "Ghost",
@@ -58,5 +58,12 @@
     "status": "Segera hadir",
     "description": "Bagian portofolio ini sedang saya siapkan. Kunjungi kembali untuk melihat pembaruan berikutnya.",
     "back": "Kembali ke beranda"
+  },
+  "Hero": {
+    "greeting": "Halo, gue Rafif Muhammad Muflihur Rodwa.",
+    "headline": "Desain yang dipikirkan dengan cermat. Dari ide hingga pengalaman nyata.",
+    "description": "Gue desainer UI/UX dari Banyuwangi, Indonesia, yang juga mendalami frontend development dan desain grafis. Gue memperjelas ide lewat antarmuka yang intuitif, visual yang berkarakter, dan kode.",
+    "contact": "Mari ngobrol",
+    "work": "Lihat karya"
   }
 }

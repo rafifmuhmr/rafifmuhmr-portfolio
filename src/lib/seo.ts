@@ -6,12 +6,12 @@ import {socialLinks} from "@/config/socials";
 export type SiteLocale = (typeof routing.locales)[number];
 export const seoCopy = {
   en: {
-    title: `${site.owner} — Frontend Developer & UI/UX Designer`,
-    description: "Meet Rafif Muhammad Muflihur Rodwa (rafifmuhmr), a frontend developer and UI/UX designer based in Banyuwangi, Indonesia. Explore his work and ideas.",
+    title: `${site.owner} — UI/UX Designer`,
+    description: "Meet Rafif Muhammad Muflihur Rodwa (rafifmuhmr), a UI/UX designer in Banyuwangi, Indonesia, also exploring frontend development and graphic design.",
   },
   id: {
-    title: `${site.owner} — Frontend Developer & Desainer UI/UX`,
-    description: "Kenali Rafif Muhammad Muflihur Rodwa (rafifmuhmr), frontend developer dan desainer UI/UX dari Banyuwangi, Indonesia. Jelajahi karya dan idenya.",
+    title: `${site.owner} — Desainer UI/UX`,
+    description: "Kenali Rafif Muhammad Muflihur Rodwa (rafifmuhmr), desainer UI/UX dari Banyuwangi yang juga mendalami frontend development dan desain grafis.",
   },
 } as const;
 

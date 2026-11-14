@@ -2,7 +2,7 @@
 
 A personal portfolio by Rafif, showcasing frontend development, UI/UX design, selected projects, and writing. Built with Next.js, TypeScript, and Bun, with English and Indonesian language support.
 
-**Development status:** foundation stage. The header, footer, theme controls, language switcher, and local information widget are implemented. The homepage still contains placeholder content; work, about, blog, and contact routes currently display localized coming-soon pages excluded from indexing.
+**Development status:** foundation stage. The header, footer, theme controls, language switcher, and local information widget are implemented. The homepage includes a bilingual introduction hero; selected projects and other portfolio sections are still in development; work, about, blog, and contact routes currently display localized coming-soon pages excluded from indexing.
 
 [Instagram](https://www.instagram.com/rafifmuhmr) · [Threads](https://www.threads.com/@rafifmuhmr) · [LinkedIn](https://www.linkedin.com/in/rafifmuhmr) · [GitHub](https://github.com/rafifmuhmr)
 
@@ -192,7 +192,7 @@ See [`docs/seo-launch.md`](./docs/seo-launch.md) for indexing, metadata validati
 
 ## Roadmap
 
-- Replace placeholder content with the hero and portfolio sections.
+- Add selected projects and the remaining portfolio sections beneath the hero.
 - Replace the coming-soon work, about, blog, and contact pages with real content.
 - Integrate a CMS and content management dashboard.
 - Extend SEO metadata and the sitemap as real portfolio pages are published.

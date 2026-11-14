@@ -17,7 +17,7 @@
   },
   "Home": {
     "title": "Rafif Muhammad Muflihur Rodwa",
-    "description": "Frontend Developer & UI/UX Designer",
+    "description": "UI/UX Designer, Frontend Developer & Graphic Designer",
     "primary": "Primary",
     "outline": "Outline",
     "ghost": "Ghost",
@@ -58,5 +58,12 @@
     "status": "Coming soon",
     "description": "This part of my portfolio is still being prepared. Check back soon for updates.",
     "back": "Back to home"
+  },
+  "Hero": {
+    "greeting": "Hi, I’m Rafif Muhammad Muflihur Rodwa.",
+    "headline": "Thoughtful design. From first idea to final experience.",
+    "description": "I’m a UI/UX designer based in Banyuwangi, Indonesia, with a passion for frontend development and graphic design. I bring clarity to ideas through intuitive interfaces, expressive visuals, and code.",
+    "contact": "Let’s talk",
+    "work": "Explore my work"
   }
 }
