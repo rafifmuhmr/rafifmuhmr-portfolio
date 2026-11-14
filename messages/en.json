@@ -1,0 +1,57 @@
+{
+  "Navigation": {
+    "work": "Work",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Let’s talk",
+    "main": "Main navigation",
+    "mobile": "Mobile navigation",
+    "open": "Open menu",
+    "close": "Close menu",
+    "home": "Rafifmuhmr home",
+    "language": "Select language",
+    "theme": "Toggle light and dark theme",
+    "switchLanguage": "Switch to {language}",
+    "backToTop": "Back to top"
+  },
+  "Home": {
+    "title": "Rafifmuhmr Portfolio",
+    "description": "Frontend Developer & UI/UX Designer",
+    "primary": "Primary",
+    "outline": "Outline",
+    "ghost": "Ghost",
+    "font": "Text in Plus Jakarta Sans"
+  },
+  "LocalStatus": {
+    "unavailable": "Weather unavailable",
+    "title": "Location, time and weather",
+    "open": "Show local information",
+    "close": "Hide local information",
+    "feelsLike": "Feels like",
+    "map": "View {location} on Google Maps",
+    "sameTime": "Same time",
+    "hours": "{count}h",
+    "minutes": "{count}m",
+    "ahead": "{duration} ahead",
+    "behind": "{duration} behind"
+  },
+  "Credits": {
+    "label": "Credits",
+    "typeface": "Typeface",
+    "icons": "Icons",
+    "weather": "Weather",
+    "logos": "Brand logos"
+  },
+  "Footer": {
+    "intro": "I design and build thoughtful digital experiences, where clear design meets carefully crafted code.",
+    "navigation": "Footer navigation",
+    "explore": "Explore",
+    "crafted": "Design & development by Rafif.",
+    "socials": "Social media",
+    "rights": "All rights reserved.",
+    "menu": "Menu",
+    "socialTitle": "Social",
+    "license": "License"
+  }
+}

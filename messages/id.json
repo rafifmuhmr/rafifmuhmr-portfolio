@@ -1,0 +1,57 @@
+{
+  "Navigation": {
+    "work": "Karya",
+    "about": "Tentang",
+    "blog": "Blog",
+    "contact": "Kontak",
+    "cta": "Mari ngobrol",
+    "main": "Navigasi utama",
+    "mobile": "Navigasi seluler",
+    "open": "Buka menu",
+    "close": "Tutup menu",
+    "home": "Beranda Rafifmuhmr",
+    "language": "Pilih bahasa",
+    "theme": "Ganti tema terang dan gelap",
+    "switchLanguage": "Ganti ke {language}",
+    "backToTop": "Kembali ke atas"
+  },
+  "Home": {
+    "title": "Portofolio Rafifmuhmr",
+    "description": "Pengembang Frontend & Desainer UI/UX",
+    "primary": "Utama",
+    "outline": "Outline",
+    "ghost": "Ghost",
+    "font": "Teks dengan Plus Jakarta Sans"
+  },
+  "LocalStatus": {
+    "unavailable": "Cuaca belum tersedia",
+    "title": "Lokasi, waktu, dan cuaca",
+    "open": "Tampilkan info lokasi",
+    "close": "Sembunyikan info lokasi",
+    "feelsLike": "Terasa seperti",
+    "map": "Lihat {location} di Google Maps",
+    "sameTime": "Waktu sama",
+    "hours": "{count}j",
+    "minutes": "{count}m",
+    "ahead": "{duration} lebih cepat",
+    "behind": "{duration} lebih lambat"
+  },
+  "Credits": {
+    "label": "Kredit",
+    "typeface": "Tipografi",
+    "icons": "Ikon",
+    "weather": "Cuaca",
+    "logos": "Logo brand"
+  },
+  "Footer": {
+    "intro": "Saya merancang dan membangun pengalaman digital yang nyaman digunakan, memadukan desain yang jelas dengan kode yang dikerjakan sepenuh hati.",
+    "navigation": "Navigasi footer",
+    "explore": "Jelajahi",
+    "crafted": "Desain & pengembangan oleh Rafif.",
+    "socials": "Media sosial",
+    "rights": "Hak cipta dilindungi.",
+    "menu": "Menu",
+    "socialTitle": "Sosial",
+    "license": "Lisensi"
+  }
+}
