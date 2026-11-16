@@ -29,7 +29,7 @@ export async function Hero() {
         <p className="max-w-xl text-sm leading-6 sm:text-base sm:leading-7 text-pretty text-muted-foreground">{t("description")}</p>
         <div className="flex flex-wrap items-center gap-3 pt-1">
           <Link href="/contact" className={cn(buttonVariants({size: "lg"}), "px-4")}>{t("contact")}</Link>
-          <Link href="/projects" className={cn(buttonVariants({variant: "outline", size: "lg"}), "px-4")}>{t("work")}</Link>
+          <Link href="/work" className={cn(buttonVariants({variant: "outline", size: "lg"}), "px-4")}>{t("work")}</Link>
         </div>
       </div>
     </section>

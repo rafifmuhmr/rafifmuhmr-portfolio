@@ -21,7 +21,7 @@ export async function Stack() {
               {group.items.map((item) => (
                 <li key={item.icon} className="flex">
                   <a href={item.href} target="_blank" rel="noopener noreferrer"
-                    className="group/stack inline-flex min-h-6 items-center gap-1.5 rounded-full border border-border bg-muted/50 px-2 py-0.5 font-mono text-xs text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+                    className="group/stack inline-flex min-h-6 items-center gap-2 rounded-full border border-border bg-muted/50 px-2 py-0.5 font-mono text-xs text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
                     <StackIcon name={item.icon} />{item.name}
                   </a>
                 </li>

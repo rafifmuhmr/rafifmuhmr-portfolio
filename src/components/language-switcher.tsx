@@ -1,8 +1,9 @@
 "use client";
 
 import {useCallback, useEffect, useTransition} from "react";
+import {useParams, useRouter} from "next/navigation";
 import {useLocale, useTranslations} from "next-intl";
-import {usePathname, useRouter} from "@/i18n/navigation";
+import {usePathname, getPathname} from "@/i18n/navigation";
 import {routing} from "@/i18n/routing";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
 import {cn} from "@/lib/utils";
@@ -11,12 +12,24 @@ function useLanguageChange() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const params = useParams();
   const [pending, startTransition] = useTransition();
   const changeLanguage = useCallback((value: (typeof routing.locales)[number]) => {
     if (pending || value === locale) return;
-    const href = pathname + window.location.search + window.location.hash;
-    startTransition(() => router.replace(href, {locale: value, scroll: false}));
-  }, [locale, pathname, pending, router]);
+    const query: Record<string, string | string[]> = {};
+    new URLSearchParams(window.location.search).forEach((entry, key) => {
+      const previous = query[key];
+      query[key] = previous === undefined ? entry : Array.isArray(previous) ? [...previous, entry] : [previous, entry];
+    });
+    const hash = window.location.hash;
+    startTransition(() => {
+      if ((pathname === "/work/[slug]" || pathname === "/work/[slug]/markdown") && typeof params.slug === "string") {
+        router.replace(getPathname({locale: value, href: {pathname, params: {slug: params.slug}, query}}) + hash, {scroll: false});
+      } else if (pathname !== "/work/[slug]" && pathname !== "/work/[slug]/markdown") {
+        router.replace(getPathname({locale: value, href: {pathname, query}}) + hash, {scroll: false});
+      }
+    });
+  }, [locale, pathname, params.slug, pending, router]);
   return {locale, pending, changeLanguage};
 }
 
