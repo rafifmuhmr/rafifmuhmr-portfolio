@@ -48,7 +48,7 @@ export function ThemeToggle() {
   );
 }
 
-// Adapted from the toggles.dev “Dark Side” example supplied by the user.
+
 function DarkSideIcon({className}: {className?: string}) {
   return (
     <svg className={className} viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">

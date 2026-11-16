@@ -9,7 +9,7 @@ export async function Hero() {
   const t = await getTranslations("Hero");
 
   return (
-    <section aria-labelledby="hero-title" className="grid items-stretch gap-8 sm:gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+    <section aria-labelledby="hero-title" className="grid pt-6 pb-10 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-26 items-stretch gap-8 sm:gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
       <div className="flex flex-col justify-between gap-6">
         <IconTile className="size-16 rounded-[12px] p-1 sm:size-19">
           <Image src="/images/rafifmuhmr-pp.png" alt="Rafif Muhammad Muflihur Rodwa" width={72} height={72} sizes="(min-width: 640px) 66px, 54px" className="size-full rounded-md object-cover" />

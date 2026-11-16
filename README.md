@@ -17,6 +17,7 @@ A personal portfolio by Rafif, showcasing frontend development, UI/UX design, se
 - **Portfolio footer:** navigation, social profiles, asset credits, copyright, and an interactive halftone wordmark.
 - **Scroll-to-top control:** positioned above the footer on desktop and beneath the Social section on mobile.
 - **SEO foundation:** localized metadata, canonical and hreflang URLs, sitemap, robots, JSON-LD, static Open Graph cards, and preview indexing controls.
+- **GitHub activity:** a five-year contribution calendar with year selection, horizontal scrolling, keyboard navigation, and validated server-side data fetching.
 - **Typography:** Plus Jakarta Sans and JetBrains Mono, with ligatures disabled.
 
 ## Technology Stack
@@ -212,3 +213,21 @@ See [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md) for attribution details
 ---
 
 Crafted by [@rafifmuhmr](https://www.instagram.com/rafifmuhmr).
+
+
+### GitHub activity data
+
+The activity section reads `rafifmuhmr`’s public contribution calendar directly
+from GitHub on the server. It offers the current calendar year and the previous
+four years, with no third-party API or Next.js data cache. Requests have a
+ten-second timeout and do not require an API token. Each response must contain
+a complete January–December calendar, valid consecutive dates, and a daily sum
+matching GitHub’s displayed total. Invalid or unavailable data produces an
+explicit unavailable state rather than a sample graph, stale fallback, or fake
+zero counts. GitHub itself determines which public contributions are visible.
+
+The calendar uses dashboardcn Activity Heatmap, adapted to the project’s Base UI tooltips and UTC dates.
+It retains the full returned date range, hides leading calendar padding, and
+scrolls horizontally on narrow screens instead of dropping older weeks. The
+initial scroll position shows the most recent activity. Dates are handled as
+UTC calendar dates to avoid shifting days with the visitor's time zone.

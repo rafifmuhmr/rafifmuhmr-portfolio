@@ -13,7 +13,8 @@
     "language": "Pilih bahasa",
     "theme": "Ganti tema terang dan gelap",
     "switchLanguage": "Ganti ke {language}",
-    "backToTop": "Kembali ke atas"
+    "backToTop": "Kembali ke atas",
+    "languageToggle": "Ganti bahasa"
   },
   "Home": {
     "title": "Rafif Muhammad Muflihur Rodwa",
@@ -65,5 +66,60 @@
     "description": "Gue desainer UI/UX dari Banyuwangi, Indonesia, yang juga mendalami frontend development dan desain grafis. Gue memperjelas ide lewat antarmuka yang intuitif, visual yang berkarakter, dan kode.",
     "contact": "Mari ngobrol",
     "work": "Lihat karya"
+  },
+  "Overview": {
+    "title": "Sekilas",
+    "pronouns": "Kata ganti: {value}",
+    "copyEmail": "Salin email",
+    "copyPhone": "Salin nomor telepon",
+    "emailCopied": "Email disalin",
+    "phoneCopied": "Nomor telepon disalin",
+    "copyFailed": "Gagal menyalin. Pilih dan salin teks secara manual.",
+    "follow": "Temukan gue di",
+    "details": "Sekilas tentang gue",
+    "detailsDescription": "Peran yang gue jalani dan cara menghubungi gue.",
+    "followDescription": "Temukan karya, ide, dan kabar terbaru gue di sini."
+  },
+  "About": {
+    "label": "Tentang gue",
+    "greeting": {
+      "hello": "Halo, dunia!",
+      "morning": "Selamat pagi.",
+      "afternoon": "Selamat siang.",
+      "lateAfternoon": "Selamat sore.",
+      "evening": "Selamat malam."
+    },
+    "intro": "<name>Gue Rafif Muhammad Muflihur Rodwa</name>, desainer UI/UX dari Banyuwangi, Indonesia. Gue merancang pengalaman digital yang jelas dan intuitif, didukung latar belakang frontend development dan desain grafis.",
+    "experience": "Gue mulai menekuni frontend development dan desain grafis sejak 2024, lalu fokus mendalami UI/UX sejak September 2025. Dalam prosesnya, gue menghubungkan alur pengguna dan desain antarmuka di Figma dengan implementasi menggunakan React, Next.js, dan Tailwind CSS.",
+    "personal": "Gue ikut mendirikan <company>Micholabs</company> pada September 2025. Di sana, gue memadukan desain dan pengembangan untuk mewujudkan ide menjadi pengalaman digital yang berguna. Di luar pekerjaan, gue menikmati eksplorasi teknologi, menulis, bereksperimen, trading, dan bertani.",
+    "description": "Sedikit cerita tentang perjalanan, karya, dan hal yang bikin gue penasaran."
+  },
+  "GithubActivity": {
+    "title": "Aktivitas GitHub",
+    "description": "Sekilas aktivitas pengembangan gue di GitHub.",
+    "unitOne": "kontribusi",
+    "unitOther": "kontribusi",
+    "period": "dalam 12 bulan terakhir",
+    "less": "Sedikit",
+    "more": "Banyak",
+    "scrollHint": "Geser horizontal untuk melihat aktivitas sepanjang tahun.",
+    "unavailable": "Aktivitas GitHub belum bisa dimuat. Profil gue tetap bisa dilihat langsung di GitHub.",
+    "viewProfile": "Lihat di GitHub",
+    "dayLabel": "{count} kontribusi pada {date}",
+    "yearPeriod": "pada {year}",
+    "selectYear": "Tahun kontribusi",
+    "yearHeading": "Tahun"
+  },
+  "Stack": {
+    "title": "Stack",
+    "description": "Tools yang gue pakai untuk mendesain, membangun, dan mengeksplorasi ide.",
+    "categories": {
+      "design": "Desain",
+      "languages": "Bahasa",
+      "frontend": "Frontend",
+      "backend": "Backend & CMS",
+      "tooling": "Tooling & AI",
+      "analytics": "Analitik & SEO"
+    }
   }
 }

@@ -17,7 +17,7 @@ import {
 } from "react";
 
 import { LocalStatusPanel } from "@/components/home/local-status-panel";
-import { LanguageSwitcher } from "@/components/language-switcher";
+import { LanguageSwitcher, useLanguageShortcut } from "@/components/language-switcher";
 import { ThemeToggle, useThemeShortcut } from "@/components/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -46,6 +46,7 @@ function getServerSnapshot() {
 
 export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
   useThemeShortcut();
+  useLanguageShortcut();
   const t = useTranslations("Navigation");
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);

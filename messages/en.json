@@ -13,7 +13,8 @@
     "language": "Select language",
     "theme": "Toggle light and dark theme",
     "switchLanguage": "Switch to {language}",
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "languageToggle": "Switch language"
   },
   "Home": {
     "title": "Rafif Muhammad Muflihur Rodwa",
@@ -65,5 +66,60 @@
     "description": "I’m a UI/UX designer based in Banyuwangi, Indonesia, with a passion for frontend development and graphic design. I bring clarity to ideas through intuitive interfaces, expressive visuals, and code.",
     "contact": "Let’s talk",
     "work": "Explore my work"
+  },
+  "Overview": {
+    "title": "Overview",
+    "pronouns": "Pronouns: {value}",
+    "copyEmail": "Copy email",
+    "copyPhone": "Copy phone number",
+    "emailCopied": "Email copied",
+    "phoneCopied": "Phone number copied",
+    "copyFailed": "Could not copy. Select and copy the text manually.",
+    "follow": "Follow me",
+    "details": "At a glance",
+    "detailsDescription": "The roles I take on and the best ways to reach me.",
+    "followDescription": "Find my work, ideas, and updates around the web."
+  },
+  "About": {
+    "label": "About me",
+    "greeting": {
+      "hello": "Hello, world!",
+      "morning": "Good morning.",
+      "afternoon": "Good afternoon.",
+      "lateAfternoon": "Good afternoon.",
+      "evening": "Good evening."
+    },
+    "intro": "<name>I’m Rafif Muhammad Muflihur Rodwa</name>, a UI/UX designer based in Banyuwangi, Indonesia. I design clear, intuitive digital experiences, supported by a background in frontend development and graphic design.",
+    "experience": "I’ve been working in frontend development and graphic design since 2024, and focusing on UI/UX design since September 2025. My work connects user journeys and interface design in Figma with implementation using React, Next.js, and Tailwind CSS.",
+    "personal": "I’ve been a co-founder of <company>Micholabs</company> since its founding in September 2025, bringing design and development together to turn ideas into useful digital experiences. Outside of work, I enjoy exploring new technologies, writing, experimenting with ideas, trading, and farming.",
+    "description": "A little about my journey, my work, and what keeps me curious."
+  },
+  "GithubActivity": {
+    "title": "GitHub activity",
+    "description": "A look at what I’ve been building on GitHub.",
+    "unitOne": "contribution",
+    "unitOther": "contributions",
+    "period": "in the last 12 months",
+    "less": "Less",
+    "more": "More",
+    "scrollHint": "Scroll horizontally to explore the full year.",
+    "unavailable": "GitHub activity is temporarily unavailable. You can still view my profile on GitHub.",
+    "viewProfile": "View on GitHub",
+    "dayLabel": "{count, plural, one {# contribution} other {# contributions}} on {date}",
+    "yearPeriod": "in {year}",
+    "selectYear": "Contribution year",
+    "yearHeading": "Year"
+  },
+  "Stack": {
+    "title": "Stack",
+    "description": "The tools I use to design, build, and explore ideas.",
+    "categories": {
+      "design": "Design",
+      "languages": "Languages",
+      "frontend": "Frontend",
+      "backend": "Backend & CMS",
+      "tooling": "Tooling & AI",
+      "analytics": "Analytics & SEO"
+    }
   }
 }
