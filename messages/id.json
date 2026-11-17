@@ -140,9 +140,9 @@
     "overviewCopy": "Halaman ini menunjukkan susunan studi kasus proyek. Versi akhirnya akan menjelaskan produk, penggunanya, dan lingkup pekerjaan.",
     "challenge": "Tantangan",
     "challengeCopy": "Jelaskan masalah pengguna, konteks, dan batasan proyek di sini. Gunakan temuan dari proyek asli, bukan asumsi.",
-    "process": "Proses desain",
+    "process": "Pendekatan & proses",
     "processCopy": "Bagian ini untuk riset, alur pengguna, wireframe, dan alasan di balik keputusan desain. Ganti visual contoh di bawah dengan hasil desain asli.",
-    "solution": "Solusi",
+    "solution": "Solusi desain",
     "solutionCopy": "Tampilkan desain akhir dan jelaskan bagaimana desain menjawab masalah. Cantumkan hasil hanya jika didukung bukti nyata.",
     "discipline": "Bidang",
     "status": "Status",
@@ -166,6 +166,8 @@
     "timeline": "Periode",
     "platform": "Platform",
     "tools": "Alat desain",
+    "deliverables": "Hasil desain",
+    "reflection": "Hasil & refleksi",
     "tags": "Tag proyek"
   },
   "ProjectActions": {

@@ -8,7 +8,7 @@ export function projectUrl(project: PortfolioProject, locale: "en" | "id") {
 export function projectMarkdown(project: PortfolioProject, locale: "en" | "id") {
   const id = locale === "id";
   return [
-    `# ${project.title}`, "", project.subtitle[locale], "", project.tags[locale].join(" · "), "", project.description[locale], "",
+    `# ${project.title}`, "", project.subtitle[locale], "", project.description[locale], "",
     `- ${id ? "Peran" : "Role"}: ${project.role[locale]}`,
     `- ${id ? "Lingkup" : "Scope"}: ${project.scope[locale]}`,
     `- Platform: ${project.platform}`,
@@ -17,8 +17,13 @@ export function projectMarkdown(project: PortfolioProject, locale: "en" | "id") 
     `- ${id ? "Portfolio" : "Portfolio"}: ${projectUrl(project, locale)}`,
     `- UI8: ${project.sourceUrl}`, "",
     `## ${id ? "Ringkasan proyek" : "Project overview"}`, "", project.overview[locale], "",
-    `## ${id ? "Sorotan" : "Highlights"}`, "", ...project.highlights[locale].map((item) => `- ${item}`), "",
+    `## ${id ? "Tantangan" : "The challenge"}`, "", project.challenge[locale], "",
+    `## ${id ? "Pendekatan & proses" : "Approach & process"}`, "",
+    ...project.process.flatMap((step, index) => [`### ${index + 1}. ${step.title[locale]}`, "", step.description[locale], ""]),
+    `## ${id ? "Solusi desain" : "Design solutions"}`, "", project.solution[locale], "",
     `## ${id ? "Gambar proyek" : "Project images"}`, "",
     ...[project.cover, ...project.gallery].filter(Boolean).map((src, index) => `![${project.title} ${index + 1}](${site.url}${src})`), "",
+    `## ${id ? "Hasil desain" : "Deliverables"}`, "", ...project.deliverables[locale].map((item) => `- ${item}`), "",
+    `## ${id ? "Hasil & refleksi" : "Outcome & reflection"}`, "", project.reflection[locale], "",
   ].join("\n");
 }

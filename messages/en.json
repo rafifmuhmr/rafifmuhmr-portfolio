@@ -140,9 +140,9 @@
     "overviewCopy": "This page previews how a project case study will be presented. The final version will describe the product, its users, and the scope of the work.",
     "challenge": "The challenge",
     "challengeCopy": "Describe the user problem, the context, and the constraints here. Add evidence from the actual project rather than assumed findings.",
-    "process": "Design process",
+    "process": "Approach & process",
     "processCopy": "Use this space for research, user flows, wireframes, and the decisions behind the interface. Replace the sample visual below with actual design artifacts.",
-    "solution": "The solution",
+    "solution": "Design solutions",
     "solutionCopy": "Present the final screens and explain how the design addresses the problem. Include outcomes only when they can be supported by real evidence.",
     "discipline": "Discipline",
     "status": "Status",
@@ -166,6 +166,8 @@
     "timeline": "Timeline",
     "platform": "Platform",
     "tools": "Tools",
+    "deliverables": "Deliverables",
+    "reflection": "Outcome & reflection",
     "tags": "Project tags"
   },
   "ProjectActions": {

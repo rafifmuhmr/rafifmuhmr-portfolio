@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {hasLocale} from "next-intl";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
-import {ArrowLeftIcon, ArrowRightUpIcon} from "@solar-icons/react/linear";
+import {ArrowLeftIcon, ArrowRightIcon, ArrowRightUpIcon} from "@solar-icons/react/linear";
 import {Link} from "@/i18n/navigation";
 import {routing} from "@/i18n/routing";
 import {projects} from "@/config/projects";
@@ -36,34 +36,70 @@ export default async function ProjectPage({params}: Props) {
     <article className="mx-auto max-w-7xl space-y-12 sm:space-y-16 lg:space-y-20">
       <header className="space-y-8">
         <ProjectPageActions title={project.title} url={url} markdownUrl={markdownUrl} markdown={projectMarkdown(project, locale)} previous={previousProject && {slug: previousProject.slug, title: previousProject.title}} next={nextProject && {slug: nextProject.slug, title: nextProject.title}} />
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_30rem] md:items-start">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-stretch md:gap-16">
           <div className="space-y-6">
             <div className="space-y-3">
               <h1 className="text-3xl font-medium tracking-tight sm:text-5xl">{project.title}</h1>
               <p className="text-lg leading-7 text-muted-foreground sm:text-xl">{project.subtitle[locale]}</p>
             </div>
-            <ul aria-label={t("tags")} className="flex flex-wrap gap-2">
-              {project.tags[locale].map((tag) => <li key={tag} className="rounded-md border border-border px-2.5 py-1 text-xs text-muted-foreground">{tag}</li>)}
-            </ul>
             <p className="max-w-2xl text-base leading-7 text-muted-foreground">{project.description[locale]}</p>
+          </div>
+          <div className="flex flex-col items-end justify-between gap-6 text-right text-sm md:min-w-40">
+            <dl>
+              <div className="space-y-2"><dt className="text-muted-foreground">{t("timeline")}</dt><dd>{project.timeline[locale]}</dd></div>
+            </dl>
             <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">{t("source")}<ArrowRightUpIcon aria-hidden="true" className="size-4" /></a>
           </div>
-          <dl className="grid grid-cols-2 gap-10 text-sm lg:grid-cols-3">
-            <div className="space-y-2"><dt className="text-muted-foreground">{t("role")}</dt><dd>{project.role[locale]}</dd></div>
-            <div className="space-y-2"><dt className="text-muted-foreground">{t("scope")}</dt><dd className="leading-6">{project.scope[locale]}</dd></div>
-            <div className="space-y-2"><dt className="text-muted-foreground">{t("timeline")}</dt><dd>{project.timeline[locale]}</dd></div>
-            <div className="space-y-2"><dt className="text-muted-foreground">{t("platform")}</dt><dd>{project.platform}</dd></div>
-            {project.tool && <div className="space-y-2"><dt className="text-muted-foreground">{t("tools")}</dt><dd>{project.tool}</dd></div>}
-          </dl>
         </div>
+        <dl className="grid w-full grid-cols-2 gap-y-8 pt-4 text-sm md:grid-cols-4">
+          <div className="space-y-2 pr-6 md:pr-8"><dt className="text-muted-foreground">{t("scope")}</dt><dd className="leading-6">{project.scope[locale]}</dd></div>
+          <div className="space-y-2 border-l border-border pl-6 md:px-8"><dt className="text-muted-foreground">{t("role")}</dt><dd>{project.role[locale]}</dd></div>
+          <div className="space-y-2 pr-6 md:border-l md:border-border md:px-8"><dt className="text-muted-foreground">{t("platform")}</dt><dd>{project.platform}</dd></div>
+          {project.tool && <div className="space-y-2 border-l border-border pl-6 md:pl-8"><dt className="text-muted-foreground">{t("tools")}</dt><dd>{project.tool}</dd></div>}
+        </dl>
       </header>
       <div className="overflow-hidden rounded-[12px]">{project.cover ? <Image src={project.cover} alt={`${project.title} — ${project.subtitle[locale]}`} width={1800} height={1360} sizes="(min-width: 1280px) 1280px, 100vw" className="h-auto w-full" /> : <ProjectCover title={project.title} label={t("coverPending")} />}</div>
-      <section aria-labelledby="project-overview" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12"><h2 id="project-overview" className="text-xl font-semibold tracking-tight">{t("overview")}</h2><div className="space-y-6"><p className="max-w-3xl text-base leading-8 text-muted-foreground">{project.overview[locale]}</p><a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">{t("source")}<ArrowRightUpIcon className="size-4" aria-hidden="true" /></a></div></section>
-      <section aria-labelledby="project-highlights" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12"><h2 id="project-highlights" className="text-xl font-semibold tracking-tight">{t("highlights")}</h2><ul className="list-disc space-y-3 pl-5 text-sm leading-6 text-muted-foreground">{project.highlights[locale].map((item) => <li key={item}>{item}</li>)}</ul></section>
-      {project.gallery.length > 0 && <section aria-labelledby="project-gallery" className="space-y-8"><h2 id="project-gallery" className="text-xl font-semibold tracking-tight">{t("gallery")}</h2><ProjectGallery images={project.gallery} title={project.title} /></section>}
+      <section aria-labelledby="project-overview" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12">
+        <h2 id="project-overview" className="text-xl font-semibold tracking-tight">{t("overview")}</h2>
+        <p className="max-w-3xl text-base leading-8 text-muted-foreground">{project.overview[locale]}</p>
+      </section>
+      <section aria-labelledby="project-challenge" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12">
+        <h2 id="project-challenge" className="text-xl font-semibold tracking-tight">{t("challenge")}</h2>
+        <p className="max-w-3xl text-base leading-8 text-muted-foreground">{project.challenge[locale]}</p>
+      </section>
+      <section aria-labelledby="project-process" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12">
+        <h2 id="project-process" className="text-xl font-semibold tracking-tight">{t("process")}</h2>
+        <ol className="divide-y divide-border">
+          {project.process.map((step, index) => <li key={step.title.en} className="flex gap-4 py-6 first:pt-0 last:pb-0 sm:gap-6">
+            <span aria-hidden="true" className="pt-1 font-mono text-xs tabular-nums text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
+            <div className="space-y-2">
+              <h3 className="text-base font-medium">{step.title[locale]}</h3>
+              <p className="max-w-3xl text-base leading-8 text-muted-foreground">{step.description[locale]}</p>
+            </div>
+          </li>)}
+        </ol>
+      </section>
+      <section aria-labelledby="project-solution" className="space-y-8 sm:space-y-10">
+        <div className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12">
+          <h2 id="project-solution" className="text-xl font-semibold tracking-tight">{t("solution")}</h2>
+          <p className="max-w-3xl text-base leading-8 text-muted-foreground">{project.solution[locale]}</p>
+        </div>
+        {project.gallery.length > 0 && <ProjectGallery images={project.gallery} title={project.title} />}
+      </section>
+      <section aria-labelledby="project-deliverables" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12">
+        <h2 id="project-deliverables" className="text-xl font-semibold tracking-tight">{t("deliverables")}</h2>
+        <ul className="list-disc space-y-3 pl-5 text-base leading-7 text-muted-foreground">{project.deliverables[locale].map((item) => <li key={item}>{item}</li>)}</ul>
+      </section>
+      <section aria-labelledby="project-reflection" className="grid gap-4 md:grid-cols-[18rem_minmax(0,1fr)] md:gap-12">
+        <h2 id="project-reflection" className="text-xl font-semibold tracking-tight">{t("reflection")}</h2>
+        <div className="space-y-6">
+          <p className="max-w-3xl text-base leading-8 text-muted-foreground">{project.reflection[locale]}</p>
+          <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">{t("source")}<ArrowRightUpIcon className="size-4" aria-hidden="true" /></a>
+        </div>
+      </section>
       <nav className="flex items-start justify-between gap-6 border-t border-border pt-8" aria-label={t("projectNavigation")}>
-        {previousProject && <Link href={{pathname: "/work/[slug]", params: {slug: previousProject.slug}}} className="space-y-2 underline-offset-4 hover:underline"><span className="block text-sm text-muted-foreground">{t("previous")}</span><span className="inline-flex items-center gap-2 text-xl font-medium"><ArrowLeftIcon aria-hidden="true" className="size-5" />{previousProject.title}</span></Link>}
-        {nextProject && <Link href={{pathname: "/work/[slug]", params: {slug: nextProject.slug}}} className="ml-auto space-y-2 text-right underline-offset-4 hover:underline"><span className="block text-sm text-muted-foreground">{t("next")}</span><span className="inline-flex items-center gap-2 text-xl font-medium">{nextProject.title}<ArrowRightUpIcon aria-hidden="true" className="size-5" /></span></Link>}
+        {previousProject && <Link href={{pathname: "/work/[slug]", params: {slug: previousProject.slug}}} className="space-y-2 underline-offset-4 hover:underline"><span className="block text-sm text-muted-foreground">{t("previous")}</span><span className="inline-flex items-center gap-2 text-base font-medium"><ArrowLeftIcon aria-hidden="true" className="size-5" />{previousProject.title}</span></Link>}
+        {nextProject && <Link href={{pathname: "/work/[slug]", params: {slug: nextProject.slug}}} className="ml-auto space-y-2 text-right underline-offset-4 hover:underline"><span className="block text-sm text-muted-foreground">{t("next")}</span><span className="inline-flex items-center gap-2 text-base font-medium">{nextProject.title}<ArrowRightIcon aria-hidden="true" className="size-5" /></span></Link>}
       </nav>
     </article>
   </main>;
