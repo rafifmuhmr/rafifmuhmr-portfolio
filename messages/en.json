@@ -197,7 +197,6 @@
     "title": "Latest writing",
     "description": "Notes on design, development, and things I’m learning.",
     "seeAll": "See all articles",
-    "previewNotice": "Layout preview — sample titles, dates, and reading times.",
     "coverPending": "Article cover coming soon",
     "readTime": "{minutes} min read",
     "examples": {
