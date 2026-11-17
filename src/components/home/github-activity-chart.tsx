@@ -23,7 +23,7 @@ export function GithubActivityChart({calendars}: {calendars: GithubYear[]}) {
 
       <p className="flex flex-wrap items-baseline gap-x-1 gap-y-1 text-base text-muted-foreground"><span className="font-mono font-medium text-foreground tabular-nums">{number.format(calendar.total)}</span><span>{calendar.total === 1 ? t("unitOne") : t("unitOther")} {t("yearPeriod", {year})}</span></p>
       <ActivityHeatmap key={year} data={calendar.days} fitWidth labelSize={12}
-        footer={<p>{shortDate.format(new Date(`${calendar.start}T00:00:00Z`))} — {shortDate.format(new Date(`${calendar.end}T00:00:00Z`))}</p>}
+        footer={<p>{shortDate.format(new Date(`${calendar.start}T00:00:00Z`))} - {shortDate.format(new Date(`${calendar.end}T00:00:00Z`))}</p>}
         startDate={new Date(`${calendar.start}T00:00:00Z`)} endDate={new Date(`${calendar.end}T00:00:00Z`)}
         colors={[
           "var(--muted)",

@@ -409,11 +409,11 @@ function ActivityHeatmap({
         </ScrollArea>
       </div>
 
-      {(footer || showLegend) && <div className="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-xs text-muted-foreground" style={{paddingLeft: fitWidth ? labelWidth : undefined}}>
-        {footer}
+      {(footer || showLegend) && <div className="mt-3 flex min-w-0 flex-nowrap items-center justify-between gap-2 pl-(--heatmap-label-width) text-xs text-muted-foreground sm:gap-6" style={{"--heatmap-label-width": `${fitWidth ? labelWidth : 0}px`} as React.CSSProperties}>
+        {footer && <div className="shrink-0 whitespace-nowrap">{footer}</div>}
       {showLegend ? (
-        <div className="ml-auto flex shrink-0 items-center justify-end gap-1">
-          <span className="mr-0.5">{lessLabel}</span>
+        <div className="flex shrink-0 items-center justify-end gap-1">
+          <span>{lessLabel}</span>
           {palette.map((fill, level) => (
             <span
               key={level}
@@ -425,7 +425,7 @@ function ActivityHeatmap({
               }}
             />
           ))}
-          <span className="ml-0.5">{moreLabel}</span>
+          <span>{moreLabel}</span>
         </div>
       ) : null}
       </div>}

@@ -25,28 +25,43 @@ export function parseContributionCalendar(input: unknown): ContributionCalendar 
 
 /** Parse GitHub's public calendar and reject incomplete/mismatched markup. */
 export function parseGithubCalendarHtml(html: string, year: number): ContributionCalendar | null {
+  if (!Number.isInteger(year) || year < 2008 || year > 9999) return null;
+  const heading = html.match(/<h2\b[^>]*\bid="js-contribution-activity-description"[^>]*>([\s\S]*?)<\/h2>/)?.[1];
+  const headingText = heading?.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  const yearlyTotal = headingText?.match(/^([\d,]+) contributions? in (\d{4})$/);
+  // A rolling-year response must never be labelled as a calendar year.
+  if (!yearlyTotal || Number(yearlyTotal[2]) !== year) return null;
+  const total = Number(yearlyTotal[1].replaceAll(",", ""));
+  if (!Number.isSafeInteger(total)) return null;
   const cells = new Map<string, {date: string; level: number}>();
+  const dates = new Set<string>();
   for (const match of html.matchAll(/<td\b([^>]*\bdata-date="\d{4}-\d{2}-\d{2}"[^>]*)>/g)) {
     const date = match[1].match(/\bdata-date="([^"]+)"/)?.[1];
     const id = match[1].match(/\bid="([^"]+)"/)?.[1];
     const rawLevel = match[1].match(/\bdata-level="([^"]+)"/)?.[1];
     const level = rawLevel === undefined ? NaN : Number(rawLevel);
     if (!Number.isInteger(level) || level < 0 || level > 4) return null;
-    if (date && id && date.startsWith(`${year}-`)) cells.set(id, {date, level});
+    if (date && date.startsWith(`${year}-`)) {
+      if (!id || cells.has(id) || dates.has(date)) return null;
+      cells.set(id, {date, level});
+      dates.add(date);
+    }
   }
   const contributions: {date: string; count: number; level: number}[] = [];
+  const parsedCells = new Set<string>();
   for (const match of html.matchAll(/<tool-tip\b[^>]*\bfor="([^"]+)"[^>]*>([\s\S]*?)<\/tool-tip>/g)) {
     const cell = cells.get(match[1]);
     if (!cell) continue;
+    if (parsedCells.has(match[1])) return null;
+    parsedCells.add(match[1]);
     const text = match[2].replace(/<[^>]+>/g, "").trim();
     const count = /^No contributions on /.test(text) ? 0 : Number(text.match(/^([\d,]+) contributions? on /)?.[1]?.replaceAll(",", ""));
     if (!Number.isSafeInteger(count)) return null;
     if ((count === 0) !== (cell.level === 0)) return null;
     contributions.push({...cell, count});
   }
+  if (parsedCells.size !== cells.size) return null;
   const calendar = parseContributionCalendar({contributions});
-  const heading = html.match(/<h2\b[^>]*\bid="js-contribution-activity-description"[^>]*>([\s\S]*?)<\/h2>/)?.[1];
-  const total = Number(heading?.replace(/<[^>]+>/g, "").trim().match(/^([\d,]+)\s+contributions?\b/)?.[1]?.replaceAll(",", ""));
   if (!calendar || calendar.start !== `${year}-01-01` || calendar.end !== `${year}-12-31` || calendar.total !== total) return null;
   return calendar;
 }
