@@ -1,11 +1,11 @@
 "use client";
 
-import {Link} from "@/i18n/navigation";
+import {Link, usePathname} from "@/i18n/navigation";
 import {useTranslations} from "next-intl";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { headerNavigation } from "./header-navigation";
+import { getNavigationCurrent, headerNavigation } from "./header-navigation";
 
 type MobileNavigationProps = {
   id: string;
@@ -19,6 +19,7 @@ export function MobileNavigation({
   onNavigate,
 }: MobileNavigationProps) {
   const t = useTranslations("Navigation");
+  const pathname = usePathname();
   return (
     <nav
       id={id}
@@ -31,8 +32,9 @@ export function MobileNavigation({
           <li key={item.href}>
             <Link
               href={item.href}
+              aria-current={getNavigationCurrent(pathname, item.href)}
               onNavigate={onNavigate}
-              className="block rounded-md py-5 text-base font-medium transition-colors hover:text-muted-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+              className="block rounded-md py-5 text-base font-normal text-muted-foreground transition-colors aria-[current]:font-medium aria-[current]:text-foreground hover:text-foreground aria-[current]:hover:text-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
             >
               {t(item.title)}
             </Link>

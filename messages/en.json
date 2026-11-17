@@ -14,7 +14,8 @@
     "theme": "Toggle light and dark theme",
     "switchLanguage": "Switch to {language}",
     "backToTop": "Back to top",
-    "languageToggle": "Switch language"
+    "languageToggle": "Switch language",
+    "homeLabel": "Home"
   },
   "Home": {
     "title": "Rafif Muhammad Muflihur Rodwa",
