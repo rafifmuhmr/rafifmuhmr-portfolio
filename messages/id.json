@@ -192,5 +192,30 @@
     "shareError": "Menu berbagi gagal dibuka. Tautannya bisa disalin.",
     "manualShare": "Salin tautan proyek, buka {platform}, lalu tempel ke postingan atau pesan.",
     "close": "Tutup"
+  },
+  "LatestWriting": {
+    "title": "Tulisan terbaru",
+    "description": "Catatan tentang desain, pengembangan, dan hal-hal yang sedang gue pelajari.",
+    "seeAll": "Lihat semua artikel",
+    "previewNotice": "Pratinjau layout — contoh judul, tanggal, dan waktu baca.",
+    "coverPending": "Sampul artikel segera hadir",
+    "readTime": "{minutes} menit baca",
+    "examples": {
+      "design": {
+        "title": "Merancang antarmuka yang terasa mudah digunakan",
+        "category": "Desain",
+        "description": "Memperjelas antarmuka kompleks melalui hierarki dan jarak."
+      },
+      "development": {
+        "title": "Mewujudkan desain antarmuka di browser",
+        "category": "Pengembangan",
+        "description": "Mewujudkan detail Figma menjadi antarmuka responsif."
+      },
+      "thoughts": {
+        "title": "Detail kecil yang membuat pengalaman digital lebih nyaman",
+        "category": "Catatan",
+        "description": "Melihat lebih dekat detail di balik interaksi sehari-hari."
+      }
+    }
   }
 }

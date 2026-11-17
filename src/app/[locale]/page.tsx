@@ -6,6 +6,7 @@ import {
 import { Hero } from "@/components/home/hero";
 import { Overview } from "@/components/home/overview";
 import { SelectedWork } from "@/components/home/selected-work";
+import { LatestWriting } from "@/components/home/latest-writing";
 import { Stack } from "@/components/home/stack";
 import { routing } from "@/i18n/routing";
 import { homeMetadata, homeStructuredData } from "@/lib/seo";
@@ -53,6 +54,7 @@ export default async function Home({
           <GithubActivity />
         </Suspense>
         <Stack />
+        <LatestWriting />
       </div>
     </main>
   );
