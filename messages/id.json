@@ -192,30 +192,36 @@
     "otherApps": "Aplikasi lainnya…",
     "shareError": "Menu berbagi gagal dibuka. Tautannya bisa disalin.",
     "manualShare": "Salin tautan proyek, buka {platform}, lalu tempel ke postingan atau pesan.",
-    "close": "Tutup"
+    "close": "Tutup",
+    "backBlog": "Blog",
+    "shareArticle": "Bagikan artikel",
+    "previousArticle": "Artikel sebelumnya: {title}",
+    "nextArticle": "Artikel berikutnya: {title}",
+    "previousArticleLabel": "Artikel sebelumnya",
+    "nextArticleLabel": "Artikel berikutnya",
+    "articlePrompt": "Baca artikel ini: {url}. Ringkas isinya dan bersiap menjawab pertanyaan tentangnya.",
+    "manualArticleShare": "Salin tautan artikel, buka {platform}, lalu tempel ke postingan atau pesan."
   },
   "LatestWriting": {
-    "title": "Tulisan terbaru",
+    "title": "Blog",
     "description": "Catatan tentang desain, pengembangan, dan hal-hal yang sedang gue pelajari.",
-    "seeAll": "Lihat semua artikel",
+    "seeAll": "Lihat semua postingan blog",
     "coverPending": "Sampul artikel segera hadir",
     "readTime": "{minutes} menit baca",
-    "examples": {
-      "design": {
-        "title": "Merancang antarmuka yang terasa mudah digunakan",
-        "category": "Desain",
-        "description": "Memperjelas antarmuka kompleks melalui hierarki dan jarak."
-      },
-      "development": {
-        "title": "Mewujudkan desain antarmuka di browser",
-        "category": "Pengembangan",
-        "description": "Mewujudkan detail Figma menjadi antarmuka responsif."
-      },
-      "thoughts": {
-        "title": "Detail kecil yang membuat pengalaman digital lebih nyaman",
-        "category": "Catatan",
-        "description": "Melihat lebih dekat detail di balik interaksi sehari-hari."
-      }
-    }
+    "allTitle": "Blog"
+  },
+  "BlogDetail": {
+    "coverPending": "Sampul artikel segera hadir",
+    "authorRole": "Desainer UI/UX",
+    "articleNavigation": "Navigasi artikel",
+    "previous": "Artikel sebelumnya",
+    "next": "Artikel berikutnya",
+    "backToBlog": "Kembali ke blog",
+    "readTime": "{minutes} menit baca",
+    "onThisPage": "Daftar isi",
+    "writtenBy": "Ditulis oleh",
+    "breadcrumb": "Jejak navigasi",
+    "references": "Referensi",
+    "photoBy": "Foto oleh"
   }
 }

@@ -86,3 +86,11 @@ MIT License. The notice above applies to those portions as well.
 with a digit-only CSS Unicode range. It is distributed under the SIL Open Font
 License 1.1; the full license and copyright notice are in
 `public/fonts/jetbrains-mono-OFL.txt`.
+
+## Blog cover photography
+
+Photographs are stored locally as WebP files and used under the [Unsplash License](https://unsplash.com/license). Photographer credits also appear below each article cover.
+
+- `simple-interfaces.webp`: [Kelly Sikkema](https://unsplash.com/photos/a-person-writing-on-a-piece-of-paper-next-to-a-keyboard-Cg60_WXjvC4).
+- `figma-to-browser.webp`: [Nubelson Fernandes](https://unsplash.com/photos/person-coding-on-laptop-workspace-UcYBL5V0xWQ).
+- `interaction-details.webp`: [Lorin Both](https://unsplash.com/photos/a-hand-holds-up-a-smartphone-_Q5HFTpOvDI).

@@ -192,30 +192,36 @@
     "otherApps": "Other apps…",
     "shareError": "Could not open the share menu. You can copy the link instead.",
     "manualShare": "Copy the project link, open {platform}, then paste it into your post or message.",
-    "close": "Close"
+    "close": "Close",
+    "backBlog": "Blog",
+    "shareArticle": "Share article",
+    "previousArticle": "Previous article: {title}",
+    "nextArticle": "Next article: {title}",
+    "previousArticleLabel": "Previous article",
+    "nextArticleLabel": "Next article",
+    "articlePrompt": "Read this article: {url}. Summarize it and be ready to answer questions about it.",
+    "manualArticleShare": "Copy the article link, open {platform}, then paste it into your post or message."
   },
   "LatestWriting": {
-    "title": "Latest writing",
+    "title": "Blog",
     "description": "Notes on design, development, and things I’m learning.",
-    "seeAll": "See all articles",
+    "seeAll": "See all blog posts",
     "coverPending": "Article cover coming soon",
     "readTime": "{minutes} min read",
-    "examples": {
-      "design": {
-        "title": "Designing interfaces that feel simple to use",
-        "category": "Design",
-        "description": "Making complex interfaces clearer through hierarchy and spacing."
-      },
-      "development": {
-        "title": "Bringing interface designs into the browser",
-        "category": "Development",
-        "description": "Turning Figma details into responsive interfaces."
-      },
-      "thoughts": {
-        "title": "Small details that make digital experiences feel better",
-        "category": "Thoughts",
-        "description": "A closer look at the details behind everyday interactions."
-      }
-    }
+    "allTitle": "Blog"
+  },
+  "BlogDetail": {
+    "coverPending": "Article cover coming soon",
+    "authorRole": "UI/UX Designer",
+    "articleNavigation": "Article navigation",
+    "previous": "Previous article",
+    "next": "Next article",
+    "backToBlog": "Back to blog",
+    "readTime": "{minutes} min read",
+    "onThisPage": "On this page",
+    "writtenBy": "Written by",
+    "breadcrumb": "Breadcrumb",
+    "references": "References",
+    "photoBy": "Photo by"
   }
 }

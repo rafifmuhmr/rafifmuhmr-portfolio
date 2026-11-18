@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {hasLocale} from "next-intl";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
-import {ArrowLeftIcon, ArrowRightIcon, ArrowRightUpIcon} from "@solar-icons/react/linear";
+import {ArrowLeftIcon, ArrowRightUpIcon} from "@solar-icons/react/linear";
 import {Link} from "@/i18n/navigation";
 import {routing} from "@/i18n/routing";
 import {projects} from "@/config/projects";
@@ -11,6 +11,7 @@ import {projectMarkdown, projectUrl} from "@/lib/project-markdown";
 import {ProjectGallery} from "@/components/home/project-gallery";
 import {ProjectCover} from "@/components/home/project-cover";
 import Image from "next/image";
+import {DetailNavigation} from "@/components/navigation/detail-navigation";
 
 type Props = {params: Promise<{locale: string; slug: string}>};
 export async function generateMetadata({params}: Props): Promise<Metadata> {
@@ -35,7 +36,10 @@ export default async function ProjectPage({params}: Props) {
   return <main className="w-full px-4 pt-14 pb-16 sm:px-6 sm:pt-20 lg:pt-30">
     <article className="mx-auto max-w-7xl space-y-12 sm:space-y-16 lg:space-y-20">
       <header className="space-y-8">
-        <ProjectPageActions title={project.title} url={url} markdownUrl={markdownUrl} markdown={projectMarkdown(project, locale)} previous={previousProject && {slug: previousProject.slug, title: previousProject.title}} next={nextProject && {slug: nextProject.slug, title: nextProject.title}} />
+        <div className="flex min-w-0 flex-wrap items-center justify-between gap-4">
+          <Link href="/work" className="inline-flex items-center gap-2 text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"><ArrowLeftIcon className="size-4" aria-hidden="true" />{t("back")}</Link>
+          <ProjectPageActions title={project.title} url={url} markdownUrl={markdownUrl} markdown={projectMarkdown(project, locale)} previous={previousProject && {slug: previousProject.slug, title: previousProject.title}} next={nextProject && {slug: nextProject.slug, title: nextProject.title}} />
+        </div>
         <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-stretch md:gap-16">
           <div className="space-y-6">
             <div className="space-y-3">
@@ -97,10 +101,10 @@ export default async function ProjectPage({params}: Props) {
           <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">{t("source")}<ArrowRightUpIcon className="size-4" aria-hidden="true" /></a>
         </div>
       </section>
-      <nav className="flex items-start justify-between gap-6 border-t border-border pt-8" aria-label={t("projectNavigation")}>
-        {previousProject && <Link href={{pathname: "/work/[slug]", params: {slug: previousProject.slug}}} className="space-y-2 underline-offset-4 hover:underline"><span className="block text-sm text-muted-foreground">{t("previous")}</span><span className="inline-flex items-center gap-2 text-base font-medium"><ArrowLeftIcon aria-hidden="true" className="size-5" />{previousProject.title}</span></Link>}
-        {nextProject && <Link href={{pathname: "/work/[slug]", params: {slug: nextProject.slug}}} className="ml-auto space-y-2 text-right underline-offset-4 hover:underline"><span className="block text-sm text-muted-foreground">{t("next")}</span><span className="inline-flex items-center gap-2 text-base font-medium">{nextProject.title}<ArrowRightIcon aria-hidden="true" className="size-5" /></span></Link>}
-      </nav>
+      <DetailNavigation pathname="/work/[slug]" label={t("projectNavigation")}
+        previousLabel={t("previous")} nextLabel={t("next")}
+        previous={previousProject && {slug: previousProject.slug, title: previousProject.title}}
+        next={nextProject && {slug: nextProject.slug, title: nextProject.title}} />
     </article>
   </main>;
 }

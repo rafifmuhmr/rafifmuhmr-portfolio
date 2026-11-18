@@ -23,9 +23,10 @@ function useLanguageChange() {
     });
     const hash = window.location.hash;
     startTransition(() => {
-      if ((pathname === "/work/[slug]" || pathname === "/work/[slug]/markdown") && typeof params.slug === "string") {
+      const dynamic = pathname === "/work/[slug]" || pathname === "/work/[slug]/markdown" || pathname === "/blog/[slug]" || pathname === "/blog/[slug]/markdown";
+      if (dynamic && typeof params.slug === "string") {
         router.replace(getPathname({locale: value, href: {pathname, params: {slug: params.slug}, query}}) + hash, {scroll: false});
-      } else if (pathname !== "/work/[slug]" && pathname !== "/work/[slug]/markdown") {
+      } else if (!dynamic) {
         router.replace(getPathname({locale: value, href: {pathname, query}}) + hash, {scroll: false});
       }
     });
