@@ -60,12 +60,12 @@ export function ProjectPageActions({kind = "project", title, url, markdownUrl, m
     {name: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, icon: <Linkedin className={icons} aria-hidden="true" />},
     {name: "Substack", platform: "Substack" as const, icon: <Substack variant="mono" className={icons} aria-hidden="true" />},
   ];
-  return <><div className="flex flex-wrap items-center justify-between gap-4">
+  return <><div className="flex shrink-0 flex-col items-end gap-2">
     <div className="flex items-center gap-2">
       <div className="inline-flex items-center rounded-lg bg-secondary">
         <Button variant="secondary" size="lg" onClick={() => void copy(markdown, "page")} aria-label={t("copyPage")} className="rounded-r-none border-none">
           {feedback === "page" ? <CheckIcon className="size-4" aria-hidden="true" /> : <CopyIcon className="size-4" aria-hidden="true" />}
-          <span className="hidden min-[400px]:inline">{feedback === "page" ? t("copied") : t("copyPage")}</span>
+          <span className={article ? "hidden sm:inline" : "hidden min-[400px]:inline"}>{feedback === "page" ? t("copied") : t("copyPage")}</span>
         </Button>
         <span aria-hidden="true" className="h-4 w-px bg-border" />
         <DropdownMenu><DropdownMenuTrigger render={<Button variant="secondary" size="icon-lg" className="rounded-l-none border-none" aria-label={t("aiOptions")} />}><AltArrowDownIcon className="size-4" aria-hidden="true" /></DropdownMenuTrigger>

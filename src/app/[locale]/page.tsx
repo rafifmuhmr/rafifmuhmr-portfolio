@@ -7,6 +7,7 @@ import { Hero } from "@/components/home/hero";
 import { Overview } from "@/components/home/overview";
 import { SelectedWork } from "@/components/home/selected-work";
 import { LatestWriting } from "@/components/home/latest-writing";
+import { WorkProcess } from "@/components/home/process/work-process";
 import { Stack } from "@/components/home/stack";
 import { routing } from "@/i18n/routing";
 import { homeMetadata, homeStructuredData } from "@/lib/seo";
@@ -50,6 +51,7 @@ export default async function Home({
         <Overview />
         <About />
         <SelectedWork />
+        <WorkProcess />
         <Suspense fallback={<GithubActivitySkeleton />}>
           <GithubActivity />
         </Suspense>

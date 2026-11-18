@@ -51,7 +51,7 @@ export default async function BlogPostPage({params}: Props) {
 
   const contents = [...post.sections.map((section) => ({id: section.id, title: section.title[locale]})), ...(post.references.length ? [{id: "references", title: t("references")}] : [])];
   const author = <div className="flex items-center gap-3">
-    <Image src="/images/rafifmuhmr-pp.png" alt="" width={40} height={40} className="size-10 shrink-0 rounded-lg object-cover" />
+    <Image src="/images/rafifmuhmr-pp.png" alt="" width={40} height={40} className="size-8 shrink-0 rounded-lg object-cover sm:size-10" />
     <p className="min-w-0 text-sm font-medium leading-6">{site.owner}</p>
   </div>;
 
@@ -64,7 +64,7 @@ export default async function BlogPostPage({params}: Props) {
       citation: post.references.map((reference) => reference.url),
     }).replace(/</g, "\\u003c")}} />}
     <div className="mx-auto w-full max-w-7xl space-y-8 sm:space-y-12">
-      <div className="flex min-w-0 flex-wrap items-center justify-between gap-4">
+      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-2 sm:gap-4">
         <BlogBreadcrumb title={post.title[locale]} label={t("breadcrumb")} />
         <ProjectPageActions kind="article" title={post.title[locale]} url={blogUrl(post, locale)} markdownUrl={`/${locale}/blog/${post.slug}/markdown`} markdown={blogMarkdown(post, locale)} previous={adjacent(previous)} next={adjacent(next)} />
       </div>

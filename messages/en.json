@@ -223,5 +223,39 @@
     "breadcrumb": "Breadcrumb",
     "references": "References",
     "photoBy": "Photo by"
+  },
+  "WorkProcess": {
+    "title": "How I work",
+    "description": "A clear path from the first conversation to a considered design, ready for its next step.",
+    "navigation": "Process steps",
+    "previous": "Previous step",
+    "next": "Next step",
+    "steps": {
+      "understand": {
+        "title": "Understand the brief",
+        "short": "Brief",
+        "description": "Get clear on the goal, audience, scope, and constraints. Start with the problem the project needs to solve."
+      },
+      "structure": {
+        "title": "Map the experience",
+        "short": "Flow",
+        "description": "Organize the content, map key user flows, and explore wireframes before moving into visual details."
+      },
+      "design": {
+        "title": "Design the interface",
+        "short": "Design",
+        "description": "Shape the visual direction in Figma, then build consistent screens, components, and responsive layouts."
+      },
+      "refine": {
+        "title": "Review and refine",
+        "short": "Review",
+        "description": "Walk through the design together, gather feedback, and refine the details across screens and interaction states."
+      },
+      "deliver": {
+        "title": "Build or hand off",
+        "short": "Deliver",
+        "description": "Prepare organized Figma files and specifications, or bring the approved design into the browser when frontend work is part of the scope."
+      }
+    }
   }
 }

@@ -223,5 +223,39 @@
     "breadcrumb": "Jejak navigasi",
     "references": "Referensi",
     "photoBy": "Foto oleh"
+  },
+  "WorkProcess": {
+    "title": "Cara gue bekerja",
+    "description": "Alur yang jelas dari obrolan pertama hingga desain yang matang dan siap dilanjutkan.",
+    "navigation": "Tahapan pengerjaan",
+    "previous": "Tahap sebelumnya",
+    "next": "Tahap berikutnya",
+    "steps": {
+      "understand": {
+        "title": "Pahami kebutuhan",
+        "short": "Brief",
+        "description": "Samakan tujuan, audiens, lingkup, dan batasan proyek. Mulai dari masalah yang perlu diselesaikan."
+      },
+      "structure": {
+        "title": "Petakan pengalaman",
+        "short": "Alur",
+        "description": "Susun konten, petakan alur pengguna utama, dan eksplorasi wireframe sebelum masuk ke detail visual."
+      },
+      "design": {
+        "title": "Rancang antarmuka",
+        "short": "Desain",
+        "description": "Tentukan arah visual di Figma, lalu rancang layar, komponen, dan layout responsif yang konsisten."
+      },
+      "refine": {
+        "title": "Tinjau dan sempurnakan",
+        "short": "Tinjauan",
+        "description": "Tinjau desain bersama, kumpulkan masukan, lalu rapikan detail di berbagai layar dan kondisi interaksi."
+      },
+      "deliver": {
+        "title": "Implementasi atau serah terima",
+        "short": "Hasil",
+        "description": "Siapkan file Figma dan spesifikasi yang terorganisasi, atau wujudkan desain ke browser jika frontend termasuk dalam lingkup proyek."
+      }
+    }
   }
 }
