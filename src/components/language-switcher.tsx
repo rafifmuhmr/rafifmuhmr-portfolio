@@ -54,14 +54,12 @@ export function LanguageSwitcher() {
   const {locale, pending, changeLanguage} = useLanguageChange();
   return (
     <Tooltip>
-      <TooltipTrigger render={<div role="group" aria-label={t("language")} aria-busy={pending}
+      <TooltipTrigger render={<div role="group" aria-label={t("language")} aria-busy={pending} aria-keyshortcuts="L"
         className="inline-flex h-9 shrink-0 items-center gap-1 rounded-lg border border-border bg-background/40 p-1" />}>
-      <button type="button" disabled={pending} onClick={() => changeLanguage(locale === "en" ? "id" : "en")} aria-label={t("language")} aria-keyshortcuts="L" className="mx-1 inline-flex size-4 shrink-0 items-center justify-center rounded-sm text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-        className="size-4" aria-hidden="true">
+        className="mx-1 size-4 shrink-0 text-muted-foreground" aria-hidden="true">
         <path d="M4 5h12M10 3v2M6 5c1 5 4 8 8 10M14 5c-1 5-4 8-9 11M14 21l4-10 4 10M15.5 17h5" />
       </svg>
-      </button>
       {routing.locales.map((value) => (
         <button key={value} type="button" aria-pressed={locale === value}
           aria-label={value === "en" ? "English" : "Bahasa Indonesia"}
