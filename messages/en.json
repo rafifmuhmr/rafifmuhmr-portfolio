@@ -257,5 +257,37 @@
         "description": "Prepare organized Figma files and specifications, or bring the approved design into the browser when frontend work is part of the scope."
       }
     }
+  },
+  "HomeFaq": {
+    "title": "FAQ",
+    "description": "A few things to know before we work together.",
+    "items": {
+      "projects": {
+        "question": "What kind of projects do you take on?",
+        "answer": "I focus on UI/UX design for websites and apps. I can also help with frontend development or graphic design, depending on what the project needs."
+      },
+      "idea": {
+        "question": "Can we work together if I only have a rough idea?",
+        "answer": "Yes. We’ll talk through your goals, who you’re designing for, and the problem you want to solve. Then we’ll decide what to design first."
+      },
+      "development": {
+        "question": "Can you build the website after designing it?",
+        "answer": "Yes, if frontend development is part of the scope. For design-only projects, I hand over organized Figma files and notes for your developers."
+      },
+      "estimate": {
+        "question": "How much does a project cost, and how long does it take?",
+        "answer": "It depends on the scope, the number of pages or screens, and whether development is included. Once we’ve talked through the brief, I can give you a cost and timeline estimate."
+      },
+      "brief": {
+        "question": "What should I share when I reach out?",
+        "answer": "Tell me what you’re working on, where you need help, and when you’d like to launch. Share any references or a budget range if you have them."
+      }
+    }
+  },
+  "HomeContact": {
+    "title": "Have a project in mind?",
+    "description": "Tell me what you’re working on and where you need help.",
+    "email": "Email me",
+    "whatsapp": "Chat on WhatsApp"
   }
 }

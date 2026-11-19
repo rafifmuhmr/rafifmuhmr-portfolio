@@ -257,5 +257,37 @@
         "description": "Siapkan file Figma dan spesifikasi yang terorganisasi, atau wujudkan desain ke browser jika frontend termasuk dalam lingkup proyek."
       }
     }
+  },
+  "HomeFaq": {
+    "title": "Pertanyaan umum",
+    "description": "Beberapa hal yang bisa lo cek sebelum kita kerja bareng.",
+    "items": {
+      "projects": {
+        "question": "Proyek seperti apa yang bisa lo bantu?",
+        "answer": "Fokus gue desain UI/UX untuk website dan aplikasi. Gue juga bisa bantu pengembangan frontend atau desain grafis, tergantung kebutuhan proyek."
+      },
+      "idea": {
+        "question": "Bisa kerja bareng kalau idenya masih kasar?",
+        "answer": "Bisa. Kita bahas dulu tujuan, pengguna, dan masalah yang mau diselesaikan. Dari situ kita tentukan bagian mana yang perlu didesain dulu."
+      },
+      "development": {
+        "question": "Bisa sekalian bikin website setelah desainnya selesai?",
+        "answer": "Bisa kalau pengembangan frontend masuk lingkup proyek. Kalau kebutuhannya sebatas desain, gue serahkan file Figma yang rapi dan catatan untuk developer."
+      },
+      "estimate": {
+        "question": "Berapa biaya dan lama pengerjaannya?",
+        "answer": "Tergantung lingkup proyek, jumlah halaman atau layar, dan apakah pengembangan juga termasuk. Setelah bahas brief, gue bisa kasih estimasi biaya dan waktu."
+      },
+      "brief": {
+        "question": "Apa yang perlu gue siapkan sebelum menghubungi lo?",
+        "answer": "Ceritain proyeknya, bantuan yang lo butuhkan, dan target waktunya. Kalau sudah ada referensi atau kisaran budget, boleh sekalian dikirim."
+      }
+    }
+  },
+  "HomeContact": {
+    "title": "Punya proyek yang mau dibahas?",
+    "description": "Ceritain proyek lo dan bagian mana yang bisa gue bantu.",
+    "email": "Kirim email",
+    "whatsapp": "Chat lewat WhatsApp"
   }
 }

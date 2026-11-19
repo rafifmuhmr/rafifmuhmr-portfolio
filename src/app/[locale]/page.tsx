@@ -1,3 +1,4 @@
+import { HomeContact, HomeFaq } from "@/components/home/faq-and-contact";
 import { About } from "@/components/home/about";
 import {
   GithubActivity,
@@ -57,6 +58,8 @@ export default async function Home({
         </Suspense>
         <Stack />
         <LatestWriting />
+        <HomeFaq />
+        <HomeContact />
       </div>
     </main>
   );
