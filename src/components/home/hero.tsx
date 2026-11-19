@@ -1,3 +1,4 @@
+import { HandShakeIcon } from "@solar-icons/react/linear";
 import Image from "next/image";
 import {getTranslations} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
@@ -28,8 +29,8 @@ export async function Hero() {
         </h2>
         <p className="max-w-xl text-sm leading-6 sm:text-base sm:leading-7 text-pretty text-muted-foreground">{t("description")}</p>
         <div className="flex flex-wrap items-center gap-3 pt-1">
-          <Link href="/contact" className={cn(buttonVariants({size: "lg"}), "px-4")}>{t("contact")}</Link>
-          <Link href="/work" className={cn(buttonVariants({variant: "outline", size: "lg"}), "px-4")}>{t("work")}</Link>
+          <Link href="/contact" className={cn(buttonVariants({size: "lg"}), "gap-2 px-4")}><HandShakeIcon size={16} className="shrink-0" aria-hidden="true" />{t("contact")}</Link>
+          <Link href="/work" className={cn(buttonVariants({variant: "outline", size: "lg"}), "gap-2 px-4")}>{t("work")}</Link>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import { HandShakeIcon } from "@solar-icons/react/linear";
 import {Link, usePathname} from "@/i18n/navigation";
 import {useTranslations} from "next-intl";
 
@@ -50,10 +51,11 @@ export function MobileNavigation({
             buttonVariants({
               variant: "outline",
               size: "lg",
-            })
+            }),
+            "gap-2"
           )}
         >
-          {t("cta")}
+          <HandShakeIcon size={16} className="shrink-0" aria-hidden="true" />{t("cta")}
         </Link>
       </div>
     </nav>

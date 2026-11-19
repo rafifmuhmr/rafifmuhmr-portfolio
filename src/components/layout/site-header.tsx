@@ -2,6 +2,7 @@
 
 import {
   HamburgerMenuIcon as Menu,
+  HandShakeIcon,
   CloseIcon as X,
 } from "@solar-icons/react/linear";
 
@@ -172,10 +173,11 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
                     variant: "default",
                     size: "lg",
                   }),
-                  "w-28 rounded-lg"
+                  "min-w-28 gap-2 rounded-lg"
                 )}
                
               >
+                <HandShakeIcon size={16} className="shrink-0" aria-hidden="true" />
                 {t("cta")}
               </Link>
             </div>
