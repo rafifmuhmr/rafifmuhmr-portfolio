@@ -1,8 +1,8 @@
 "use client";
 
-import {useEffect, useRef, useState, useSyncExternalStore} from "react";
+import {useState, useSyncExternalStore} from "react";
 import {useTranslations} from "next-intl";
-import {AltArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon, CopyIcon, DocumentTextIcon, LinkIcon, ShareIcon, CloseIcon} from "@solar-icons/react/linear";
+import {AltArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, DocumentTextIcon, ShareIcon, CloseIcon} from "@solar-icons/react/linear";
 import ChatGPT from "@thesvg/react/openai-chatgpt";
 import Claude from "@thesvg/react/claude";
 import Cursor from "@thesvg/react/cursor";
@@ -14,6 +14,8 @@ import Instagram from "@thesvg/react/instagram";
 import Substack from "@thesvg/react/substack";
 import {Dialog} from "@base-ui/react/dialog";
 import {Link} from "@/i18n/navigation";
+import {CopyFeedbackIcon, CopyFeedbackLabel, useCopyFeedback} from "@/components/ui/copy-feedback";
+import {CopyButton} from "@/components/ui/copy-button";
 import {Button} from "@/components/ui/button";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
@@ -29,19 +31,15 @@ export function ProjectPageActions({kind = "project", title, url, markdownUrl, m
   const t = useTranslations("ProjectActions");
   const article = kind === "article";
   const canShare = useSyncExternalStore(subscribeShare, getShareSupport, getServerShareSupport);
-  const [feedback, setFeedback] = useState<"page" | "link" | "error" | "share-error" | null>(null);
+  const linkCopy = useCopyFeedback();
+  const [shareError, setShareError] = useState(false);
   const [manualPlatform, setManualPlatform] = useState<"Instagram" | "Substack" | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => () => {if (timer.current) clearTimeout(timer.current);}, []);
-  async function copy(value: string, kind: "page" | "link") {
-    try {await navigator.clipboard.writeText(value); setFeedback(kind);} catch {setFeedback("error");}
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setFeedback(null), 2000);
-  }
+  const linkLabel = t(linkCopy.status === "copied" ? "linkCopied" : linkCopy.status === "failed" ? "copyError" : "copyLink");
   async function shareToDevice() {
+    setShareError(false);
     try {await navigator.share({title, url});} catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
-      setFeedback("share-error");
+      setShareError(true);
     }
   }
   const prompt = t(article ? "articlePrompt" : "prompt", {url: new URL(markdownUrl, url).href});
@@ -63,10 +61,12 @@ export function ProjectPageActions({kind = "project", title, url, markdownUrl, m
   return <><div className="flex shrink-0 flex-col items-end gap-2">
     <div className="flex items-center gap-2">
       <div className="inline-flex items-center rounded-lg bg-secondary">
-        <Button variant="secondary" size="lg" onClick={() => void copy(markdown, "page")} aria-label={t("copyPage")} className="rounded-r-none border-none">
-          {feedback === "page" ? <CheckIcon className="size-4" aria-hidden="true" /> : <CopyIcon className="size-4" aria-hidden="true" />}
-          <span className={article ? "hidden sm:inline" : "hidden min-[400px]:inline"}>{feedback === "page" ? t("copied") : t("copyPage")}</span>
-        </Button>
+        <CopyButton
+          text={markdown} label={t("copyPage")} copiedLabel={t("copied")} errorLabel={t("copyError")}
+          aria-label={t("copyPage")} showLabel variant="secondary" size="md"
+          className={article ? "rounded-l-lg rounded-r-none bg-secondary px-2.5 shadow-none sm:px-3" : "rounded-l-lg rounded-r-none bg-secondary px-2.5 shadow-none min-[400px]:px-3"}
+          labelClassName={article ? "hidden sm:inline-flex" : "hidden min-[400px]:inline-flex"}
+        />
         <span aria-hidden="true" className="h-4 w-px bg-border" />
         <DropdownMenu><DropdownMenuTrigger render={<Button variant="secondary" size="icon-lg" className="rounded-l-none border-none" aria-label={t("aiOptions")} />}><AltArrowDownIcon className="size-4" aria-hidden="true" /></DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -77,7 +77,7 @@ export function ProjectPageActions({kind = "project", title, url, markdownUrl, m
       </div>
       <DropdownMenu><DropdownMenuTrigger render={<Button variant="secondary" size="icon-lg" aria-label={t(article ? "shareArticle" : "share")} />}><ShareIcon className="size-4" aria-hidden="true" /></DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem onClick={() => void copy(url, "link")}>{feedback === "link" ? <CheckIcon aria-hidden="true" /> : <LinkIcon aria-hidden="true" />}{feedback === "link" ? t("linkCopied") : t("copyLink")}</DropdownMenuItem>
+          <DropdownMenuItem closeOnClick={false} onClick={() => void linkCopy.copy(url)}><CopyFeedbackIcon status={linkCopy.status} link /><CopyFeedbackLabel text={linkLabel} /></DropdownMenuItem>
           {social.map((item) => item.href ? (
             <DropdownMenuItem key={item.name} render={<a href={item.href} target="_blank" rel="noopener noreferrer" />}>{item.icon}{t("shareOn", {platform: item.name})}</DropdownMenuItem>
           ) : (
@@ -96,7 +96,8 @@ export function ProjectPageActions({kind = "project", title, url, markdownUrl, m
         </TooltipContent>
       </Tooltip> : null)}
     </div>
-    <span role="status" aria-live="polite" className={feedback === "error" || feedback === "share-error" ? "w-full text-sm text-destructive" : "sr-only"}>{feedback === "share-error" ? t("shareError") : feedback === "error" ? t("copyError") : feedback === "page" ? t("copied") : feedback === "link" ? t("linkCopied") : ""}</span>
+    <span role="status" className="sr-only">{linkCopy.status !== "idle" && linkLabel}</span>
+    {shareError && <p role="status" className="w-full text-sm text-destructive">{t("shareError")}</p>}
   </div>
   <Dialog.Root open={manualPlatform !== null} onOpenChange={(open) => {if (!open) setManualPlatform(null);}}>
     <Dialog.Portal><Dialog.Backdrop className="fixed inset-0 z-[70] bg-background/80 backdrop-blur-sm" />
@@ -104,7 +105,7 @@ export function ProjectPageActions({kind = "project", title, url, markdownUrl, m
         <Dialog.Title className="pr-8 text-lg font-semibold">{t("shareOn", {platform: manualPlatform ?? ""})}</Dialog.Title>
         <Dialog.Description className="text-sm leading-6 text-muted-foreground">{t(article ? "manualArticleShare" : "manualShare", {platform: manualPlatform ?? ""})}</Dialog.Description>
         <div className="flex flex-wrap gap-3">
-          <Button variant="secondary" size="lg" onClick={() => void copy(url, "link")}>{feedback === "link" ? <CheckIcon className="size-4" /> : <CopyIcon className="size-4" />}{feedback === "link" ? t("linkCopied") : t("copyLink")}</Button>
+          <CopyButton text={url} label={t("copyLink")} copiedLabel={t("linkCopied")} errorLabel={t("copyError")} showLabel variant="secondary" size="md" className="rounded-lg" />
           <Button size="lg" nativeButton={false} render={<a href={manualPlatform === "Instagram" ? "https://www.instagram.com/" : "https://substack.com/notes"} target="_blank" rel="noopener noreferrer" />}>{t("openIn", {platform: manualPlatform ?? ""})}</Button>
         </div>
         <Dialog.Close render={<Button variant="ghost" size="icon-lg" aria-label={t("close")} className="absolute top-3 right-3" />}><CloseIcon className="size-4" aria-hidden="true" /></Dialog.Close>
