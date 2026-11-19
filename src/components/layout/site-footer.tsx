@@ -4,7 +4,7 @@ import Image from "next/image";
 import {getTranslations} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {socialLinks, instagramUrl} from "@/config/socials";
-import {headerNavigation} from "./header-navigation";
+import {headerNavigation, resourceNavigation} from "./header-navigation";
 import {DeferredWordmark} from "./deferred-wordmark";
 import {SiteCredits} from "./site-credits";
 
@@ -28,7 +28,7 @@ export async function SiteFooter({locale}: {locale: string}) {
             <nav aria-label={t("navigation")} className="md:row-span-2">
               <h2 className="mb-4 font-medium text-foreground">{t("menu")}</h2>
               <ul className="space-y-3">
-                {headerNavigation.map((item) => <li key={item.href}><Link target="_blank" href={item.href} className={externalLinkClass} rel="noopener noreferrer">{nav(item.title)}</Link></li>)}
+                {[...headerNavigation.filter((item) => item.href !== "/blog"), ...resourceNavigation, {title: "cta", href: "/contact"} as const].map((item) => <li key={item.href}><Link target="_blank" href={item.href} className={externalLinkClass} rel="noopener noreferrer">{nav(item.title)}</Link></li>)}
               </ul>
             </nav>
             <SiteCredits locale={locale} />

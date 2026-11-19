@@ -7,7 +7,7 @@ import {routing} from "@/i18n/routing";
 import {site} from "@/config/site";
 import {buttonVariants} from "@/components/ui/button";
 
-type PageKey = "work" | "about" | "blog" | "contact";
+type PageKey = "work" | "about" | "blog" | "contact" | "bookmarks" | "bookshelf";
 export type PendingPageProps = {params: Promise<{locale: string}>};
 
 export async function pendingMetadata({params}: PendingPageProps, page: PageKey, path: string): Promise<Metadata> {

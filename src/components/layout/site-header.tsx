@@ -6,7 +6,7 @@ import {
   CloseIcon as X,
 } from "@solar-icons/react/linear";
 
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import {
   type ReactNode,
@@ -45,11 +45,19 @@ function getServerSnapshot() {
   return false;
 }
 
+// The locale segment remounts the header when the language changes.
+let resourcesView: { pathname: string; anchorScrolled: boolean | null; mobileOpen: boolean } | undefined;
+
 export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
   useThemeShortcut();
   useLanguageShortcut();
   const t = useTranslations("Navigation");
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(() => resourcesView?.pathname === pathname && resourcesView.mobileOpen);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(mobileOpen);
+  const [resourcesAnchorScrolled, setResourcesAnchorScrolled] = useState(() =>
+    resourcesView?.pathname === pathname ? resourcesView.anchorScrolled : null
+  );
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileNavigationId = useId();
 
@@ -60,14 +68,19 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
   );
 
   const showSurface = scrolled || mobileOpen;
+  const compactHeader = resourcesAnchorScrolled ?? scrolled;
 
   // Close the mobile menu when switching to desktop.
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 1024px)");
 
     const handleResize = () => {
+      resourcesView = undefined;
       if (desktop.matches) {
         setMobileOpen(false);
+        setMobileResourcesOpen(false);
+      } else {
+        setResourcesAnchorScrolled(null);
       }
     };
 
@@ -91,6 +104,8 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
   }, [mobileOpen]);
 
   function closeMobileMenu() {
+    resourcesView = undefined;
+    setMobileResourcesOpen(false);
     setMobileOpen(false);
   }
 
@@ -118,8 +133,8 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
             "mx-auto w-full rounded-2xl border px-3",
             "transition-[max-width,background-color,border-color,padding,backdrop-filter]",
             "duration-500 ease-in-out motion-reduce:transition-none",
-            scrolled ? "max-w-5xl" : "max-w-7xl",
-            !scrolled && "lg:px-0",
+            compactHeader ? "max-w-5xl" : "max-w-7xl",
+            !compactHeader && "lg:px-0",
             showSurface
               ? "border-border bg-background/60 backdrop-blur-2xl backdrop-saturate-150"
               : "border-transparent bg-transparent shadow-none"
@@ -152,15 +167,19 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
               </span>
             </Link>
 
-            <DesktopNavigation />
+            <DesktopNavigation resourcesOpen={resourcesAnchorScrolled !== null} onResourcesOpenChange={(open) => {
+              const anchorScrolled = open ? scrolled : null;
+              resourcesView = open ? { pathname, anchorScrolled, mobileOpen: false } : undefined;
+              setResourcesAnchorScrolled(anchorScrolled);
+            }} />
 
             <div className="hidden items-center justify-end gap-3 lg:flex">
-              <ThemeToggle />
+              <div data-keep-resources-open className="contents"><ThemeToggle /></div>
               <Separator
                 orientation="vertical"
                 className="data-vertical:h-6 data-vertical:self-center"
               />
-              <LanguageSwitcher />
+              <div data-keep-resources-open className="contents"><LanguageSwitcher /></div>
               <Separator
                 orientation="vertical"
                 className="data-vertical:h-6 data-vertical:self-center"
@@ -183,12 +202,12 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
             </div>
 
             <div className="flex items-center gap-2 lg:hidden">
-              <ThemeToggle />
+              <div data-keep-resources-open className="contents"><ThemeToggle /></div>
               <Separator
                 orientation="vertical"
                 className="data-vertical:h-6 data-vertical:self-center"
               />
-              <LanguageSwitcher />
+              <div data-keep-resources-open className="contents"><LanguageSwitcher /></div>
               <Separator
                 orientation="vertical"
                 className="data-vertical:h-6 data-vertical:self-center"
@@ -202,7 +221,7 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
                 aria-label={mobileOpen ? t("close") : t("open")}
                 aria-expanded={mobileOpen}
                 aria-controls={mobileNavigationId}
-                onClick={() => setMobileOpen((open) => !open)}
+                onClick={() => mobileOpen ? closeMobileMenu() : setMobileOpen(true)}
               >
                 {mobileOpen ? (
                   <X className="size-5" aria-hidden="true" />
@@ -216,13 +235,18 @@ export function SiteHeader({ localStatus }: { localStatus: ReactNode }) {
           <MobileNavigation
             id={mobileNavigationId}
             open={mobileOpen}
+            resourcesOpen={mobileResourcesOpen}
+            onResourcesOpenChange={(open) => {
+              resourcesView = open && mobileOpen ? { pathname, anchorScrolled: null, mobileOpen: true } : undefined;
+              setMobileResourcesOpen(open);
+            }}
             onNavigate={closeMobileMenu}
           />
         </div>
         <div
           className={cn(
             "mx-auto w-full transition-[max-width] duration-500 ease-in-out motion-reduce:transition-none",
-            scrolled ? "max-w-5xl" : "max-w-7xl",
+            compactHeader ? "max-w-5xl" : "max-w-7xl",
             mobileOpen && "hidden"
           )}
         >

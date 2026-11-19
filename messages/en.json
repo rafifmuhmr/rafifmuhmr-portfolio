@@ -1,5 +1,9 @@
 {
   "Navigation": {
+    "services": "Services",
+    "resources": "Resources",
+    "bookmarks": "Bookmarks",
+    "bookshelf": "Bookshelf",
     "work": "Work",
     "about": "About",
     "blog": "Blog",
@@ -289,5 +293,20 @@
     "description": "Tell me what you’re working on and where you need help.",
     "email": "Email me",
     "whatsapp": "Chat on WhatsApp"
+  },
+  "ServicesPage": {
+    "description": "I help turn ideas into clear, useful digital experiences.",
+    "uiux": {
+      "title": "UI/UX design",
+      "description": "User flows, wireframes, and responsive interfaces for websites and apps."
+    },
+    "frontend": {
+      "title": "Frontend development",
+      "description": "Responsive websites built from approved designs, with attention to accessibility and performance."
+    },
+    "graphic": {
+      "title": "Graphic design",
+      "description": "Visual assets that support your brand across digital channels."
+    }
   }
 }

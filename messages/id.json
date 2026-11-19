@@ -1,5 +1,9 @@
 {
   "Navigation": {
+    "services": "Layanan",
+    "resources": "Referensi",
+    "bookmarks": "Tautan pilihan",
+    "bookshelf": "Rak buku",
     "work": "Karya",
     "about": "Tentang",
     "blog": "Blog",
@@ -289,5 +293,20 @@
     "description": "Ceritain proyek lo dan bagian mana yang bisa gue bantu.",
     "email": "Kirim email",
     "whatsapp": "Chat lewat WhatsApp"
+  },
+  "ServicesPage": {
+    "description": "Gue bantu mewujudkan ide jadi pengalaman digital yang jelas dan mudah dipakai.",
+    "uiux": {
+      "title": "Desain UI/UX",
+      "description": "Alur pengguna, wireframe, dan antarmuka responsif untuk website dan aplikasi."
+    },
+    "frontend": {
+      "title": "Pengembangan frontend",
+      "description": "Website responsif dari desain yang sudah disepakati, dengan perhatian pada aksesibilitas dan performa."
+    },
+    "graphic": {
+      "title": "Desain grafis",
+      "description": "Aset visual untuk mendukung identitas brand lo di berbagai kanal digital."
+    }
   }
 }

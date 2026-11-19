@@ -23,13 +23,14 @@ export async function HomeFaq() {
   );
 }
 
-export async function HomeContact() {
+export async function HomeContact({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   const t = await getTranslations("HomeContact");
 
   return (
     <section id="contact" aria-labelledby="home-contact-title" className="flex scroll-mt-28 flex-col gap-8 py-6 sm:py-8 lg:flex-row lg:items-center lg:justify-between lg:py-10">
       <div className="max-w-xl space-y-3">
-        <h2 id="home-contact-title" className="text-xl font-semibold tracking-tight">{t("title")}</h2>
+        <Heading id="home-contact-title" className={standalone ? "text-3xl font-semibold tracking-tight" : "text-xl font-semibold tracking-tight"}>{t("title")}</Heading>
         <p className="text-sm leading-6 text-muted-foreground">{t("description")}</p>
       </div>
       <div className="flex flex-wrap gap-3">
