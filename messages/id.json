@@ -86,6 +86,9 @@
     "followDescription": "Temukan karya, ide, dan kabar terbaru gue di sini."
   },
   "About": {
+    "homeIntro": "Antarmuka yang baik bikin orang tahu apa yang harus dilakukan selanjutnya. Gue merancang website dan aplikasi berdasarkan tujuan penggunanya, mulai dari mencari informasi sampai melakukan pembayaran.",
+    "homeApproach": "Di Micholabs, studio yang gue dirikan bareng tim, gue mengerjakan proyek dari alur pengguna sampai desain antarmuka siap dipakai. Pengalaman gue di frontend membantu memastikan keputusan desainnya bisa diterapkan dari Figma ke browser.",
+    "homeCta": "Kenali gue lebih dekat",
     "label": "Tentang gue",
     "greeting": {
       "hello": "Halo, dunia!",

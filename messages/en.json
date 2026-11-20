@@ -86,6 +86,9 @@
     "followDescription": "Find my work, ideas, and updates around the web."
   },
   "About": {
+    "homeIntro": "A good interface makes it clear what to do next. I design websites and apps around the tasks people come to complete, from finding information to making a payment.",
+    "homeApproach": "At Micholabs, the studio I co-founded, I take projects from early user flows to polished interfaces. My frontend background helps me make design decisions that hold up when the work moves from Figma to the browser.",
+    "homeCta": "More about me",
     "label": "About me",
     "greeting": {
       "hello": "Hello, world!",

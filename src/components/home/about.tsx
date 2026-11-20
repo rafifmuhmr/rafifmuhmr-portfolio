@@ -1,43 +1,29 @@
-import {Children, cloneElement, isValidElement, type ReactNode} from "react";
-import {ScrollRevealText} from "./scroll-reveal-text";
-import {getTranslations} from "next-intl/server";
-import {contact} from "@/config/contact";
-import {IntroItemLink} from "./intro-item";
-import {LocalGreeting} from "./local-greeting";
+import { ArrowRightIcon } from "@solar-icons/react/linear";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { ScrollRevealText } from "./scroll-reveal-text";
 
-function revealWords(content: ReactNode): ReactNode {
-  return Children.map(content, (node) => {
-    if (typeof node === "string") {
-      return node.split(/(\s+)/).map((word, index) => !word.trim() ? word : (
-        <span key={index} data-reveal-word className="text-muted-foreground">{word}</span>
-      ));
-    }
-    if (isValidElement<{children?: ReactNode; "data-reveal-fixed"?: boolean}>(node)) {
-      if (node.props["data-reveal-fixed"]) return node;
-      return cloneElement(node, {}, revealWords(node.props.children));
-    }
-    return node;
-  });
+function revealWords(text: string) {
+  return text.split(/(\s+)/).map((word, index) => word.trim() ? (
+    <span key={index} data-reveal-word className="text-muted-foreground">{word}</span>
+  ) : word);
 }
 
 export async function About() {
   const t = await getTranslations("About");
+
   return (
-    <section id="about" aria-labelledby="about-title" className="py-6 sm:py-8 lg:py-10">
-      <div className="w-full space-y-8">
-        <header className="space-y-3">
-          <h2 id="about-title" className="text-xl font-semibold tracking-tight">{t("label")}</h2>
-          <p className="text-sm leading-6 text-muted-foreground">{t("description")}</p>
-        </header>
-        <div className="space-y-4">
-        <LocalGreeting />
-        <ScrollRevealText>
-          <p>{revealWords(t.rich("intro", {name: (chunks) => <span data-reveal-fixed className="text-foreground">{chunks}</span>}))}</p>
-          <p>{revealWords(t("experience"))}</p>
-          <p>{revealWords(t.rich("personal", {company: (chunks) => <IntroItemLink href={contact.companyUrl} className="font-medium">{chunks}</IntroItemLink>}))}</p>
-        </ScrollRevealText>
-        </div>
-      </div>
+    <section id="about" aria-label={t("label")} className="space-y-6 py-6 sm:py-8 lg:py-10">
+      <ScrollRevealText>
+        <p>{revealWords(t("homeIntro"))}</p>
+        <p>{revealWords(t("homeApproach"))}</p>
+      </ScrollRevealText>
+      <Link href="/about" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "gap-2 px-4")}>
+        {t("homeCta")}
+        <ArrowRightIcon size={16} className="shrink-0" aria-hidden="true" />
+      </Link>
     </section>
   );
 }
