@@ -12,7 +12,7 @@ const steps = ["understand", "structure", "design", "refine", "deliver"] as cons
 
 export function WorkProcess() {
   const t = useTranslations("WorkProcess");
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | null>(null);
   return <section id="process" aria-labelledby="work-process-title" className="min-w-0 py-6 sm:py-8 lg:py-10 motion-reduce:[&_[data-slot=accordion-content]]:animate-none">
     <header className="mb-8 space-y-3">
       <h2 id="work-process-title" className="text-xl font-semibold tracking-tight">{t("title")}</h2>
@@ -20,13 +20,13 @@ export function WorkProcess() {
     </header>
     <div className="grid min-w-0 items-center gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-12">
       <div className="relative flex min-w-0 items-center gap-3 sm:gap-5">
-        <div role="group" aria-label={t("navigation")} className="flex shrink-0 flex-col gap-2">
-          <Button type="button" variant="outline" size="icon-lg" className="bg-background shadow-none" disabled={active === 0} onClick={() => setActive((value) => Math.max(0, value - 1))} aria-label={t("previous")}><AltArrowUpIcon className="size-4" aria-hidden="true" /></Button>
-          <Button type="button" variant="outline" size="icon-lg" className="bg-background shadow-none" disabled={active === steps.length - 1} onClick={() => setActive((value) => Math.min(steps.length - 1, value + 1))} aria-label={t("next")}><AltArrowDownIcon className="size-4" aria-hidden="true" /></Button>
+        <div role="group" aria-label={t("navigation")} className={`flex shrink-0 flex-col gap-2 ${active === null ? "invisible" : ""}`}>
+          <Button type="button" variant="outline" size="icon-lg" className="cursor-pointer bg-background shadow-none disabled:cursor-default" disabled={active === null || active === 0} onClick={() => { if (active !== null && active > 0) setActive(active - 1); }} aria-label={t("previous")}><AltArrowUpIcon className="size-4" aria-hidden="true" /></Button>
+          <Button type="button" variant="outline" size="icon-lg" className="cursor-pointer bg-background shadow-none disabled:cursor-default" disabled={active === null || active === steps.length - 1} onClick={() => { if (active !== null && active < steps.length - 1) setActive(active + 1); }} aria-label={t("next")}><AltArrowDownIcon className="size-4" aria-hidden="true" /></Button>
         </div>
-        <Accordion className="@container min-w-0 gap-3" value={[steps[active]]} onValueChange={(values) => {
+        <Accordion className="@container min-w-0 gap-3" multiple={false} value={active === null ? [] : [steps[active]]} onValueChange={(values) => {
           const index = steps.indexOf(values[0]);
-          if (index >= 0) setActive(index);
+          setActive(index >= 0 ? index : null);
         }}>
           {steps.map((step, index) => <ProcessStep key={step} value={step} active={active === index}
             title={t(`steps.${step}.short`)} description={t(`steps.${step}.description`)} />)}

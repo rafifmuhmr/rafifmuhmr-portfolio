@@ -1,6 +1,6 @@
 import {useId} from "react";
 
-type Props = {active: number; labels: string[]};
+type Props = {active: number | null; labels: string[]};
 // Both faces share the same rounded edge, so the side meets them exactly.
 const frontEdge = "C-78 4-76 6-72 8L-8 45Q0 50 8 45L72 8C76 6 78 4 78 0";
 const tileTop = `M-78 0${frontEdge}C78-4 76-6 72-8L8-45Q0-50-8-45L-72-8C-76-6-78-4-78 0Z`;
