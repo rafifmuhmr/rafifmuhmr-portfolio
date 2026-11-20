@@ -3,8 +3,8 @@ import { BookIcon, BookmarkIcon, DocumentTextIcon } from "@solar-icons/react/lin
 export const headerNavigation = [
   { title: "homeLabel", href: "/" },
   { title: "work", href: "/work" },
-  { title: "services", href: "/services" },
   { title: "about", href: "/about" },
+  { title: "services", href: "/services" },
   { title: "blog", href: "/blog" },
 ] as const;
 
