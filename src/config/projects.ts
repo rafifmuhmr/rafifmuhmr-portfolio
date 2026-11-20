@@ -8,6 +8,7 @@ export type PortfolioProject = {
   role: LocalizedCopy;
   scope: LocalizedCopy;
   platform: "Web" | "Mobile";
+  format?: "socialMedia";
   overview: LocalizedCopy;
   challenge: LocalizedCopy;
   process: {title: LocalizedCopy; description: LocalizedCopy}[];

@@ -308,5 +308,15 @@
       "title": "Graphic design",
       "description": "Visual assets that support your brand across digital channels."
     }
+  },
+  "WorkPage": {
+    "featured": "Featured",
+    "allProjects": "All Projects",
+    "filterLabel": "Filter projects",
+    "all": "All",
+    "websites": "Websites",
+    "mobileApps": "Mobile Apps",
+    "socialMedia": "Social Media",
+    "resultCount": "{count, plural, one {# project} other {# projects}}"
   }
 }

@@ -308,5 +308,15 @@
       "title": "Desain grafis",
       "description": "Aset visual untuk mendukung identitas brand lo di berbagai kanal digital."
     }
+  },
+  "WorkPage": {
+    "featured": "Karya Pilihan",
+    "allProjects": "Semua Proyek",
+    "filterLabel": "Filter proyek",
+    "all": "Semua",
+    "websites": "Website",
+    "mobileApps": "Aplikasi Mobile",
+    "socialMedia": "Media Sosial",
+    "resultCount": "{count} proyek"
   }
 }
