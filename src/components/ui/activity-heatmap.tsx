@@ -358,7 +358,7 @@ function ActivityHeatmap({
                     renderTooltip(datum)
                   ) : (
                     <>
-                      <span className="font-mono font-medium tabular-nums">
+                      <span className="font-medium tabular-nums">
                         {valueFormatter(value)} {unit}
                       </span>
                       <span className="text-background/70 block">

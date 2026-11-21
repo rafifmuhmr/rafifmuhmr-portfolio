@@ -38,7 +38,7 @@ export function ProjectGallery({images, title}: {images: string[]; title: string
         <header className="flex shrink-0 items-center justify-between gap-4">
           <div className="min-w-0 space-y-1"><Dialog.Title className="truncate text-sm font-medium">{title}</Dialog.Title><Dialog.Description className="text-xs text-muted-foreground">{t("gallery")}</Dialog.Description></div>
           <div className="flex items-center gap-2">
-            <span role="status" aria-live="polite" aria-atomic="true" className="mr-2 whitespace-nowrap font-mono text-sm tabular-nums text-muted-foreground">{selected + 1} / {images.length}</span>
+            <span role="status" aria-live="polite" aria-atomic="true" className="mr-2 whitespace-nowrap text-sm tabular-nums text-muted-foreground">{selected + 1} / {images.length}</span>
             <Dialog.Close render={<Button variant="outline" size="icon-lg" aria-label={t("closeGallery")} />}><CloseIcon className="size-4" aria-hidden="true" /></Dialog.Close>
           </div>
         </header>

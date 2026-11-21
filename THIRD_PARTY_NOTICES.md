@@ -94,3 +94,29 @@ Photographs are stored locally as WebP files and used under the [Unsplash Licens
 - `simple-interfaces.webp`: [Kelly Sikkema](https://unsplash.com/photos/a-person-writing-on-a-piece-of-paper-next-to-a-keyboard-Cg60_WXjvC4).
 - `figma-to-browser.webp`: [Nubelson Fernandes](https://unsplash.com/photos/person-coding-on-laptop-workspace-UcYBL5V0xWQ).
 - `interaction-details.webp`: [Lorin Both](https://unsplash.com/photos/a-hand-holds-up-a-smartphone-_Q5HFTpOvDI).
+
+## Chánh Đại portfolio components
+
+Adapted from https://github.com/ncdai/chanhdai.com.
+
+MIT License
+
+Copyright (c) 2026 Chánh Đại
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

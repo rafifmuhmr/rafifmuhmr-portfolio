@@ -13,12 +13,12 @@ export async function HomeFaq() {
   }));
 
   return (
-    <section aria-labelledby="home-faq-title" className="grid gap-8 py-6 sm:py-8 lg:grid-cols-[1fr_2fr] lg:gap-12 lg:py-10">
+    <section aria-labelledby="home-faq-title" className="grid gap-8 py-6 sm:py-8 lg:grid-cols-3 lg:gap-x-6 lg:py-10">
       <div className="space-y-3">
         <h2 id="home-faq-title" className="text-xl font-semibold tracking-tight">{t("title")}</h2>
         <p className="text-sm leading-6 text-muted-foreground">{t("description")}</p>
       </div>
-      <FaqAccordion type="single" items={items} />
+      <FaqAccordion className="min-w-0 lg:col-span-2" type="single" items={items} />
     </section>
   );
 }

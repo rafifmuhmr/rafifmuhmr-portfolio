@@ -38,7 +38,7 @@ export function ContactItem({kind, value, display = value}: ContactItemProps) {
     <IntroItem className="group relative min-w-0 gap-2 font-medium sm:gap-4">
       <IntroItemIcon aria-hidden="true"><Icon className="size-4" /></IntroItemIcon>
       <IntroItemContent className="min-w-0">
-        <IntroItemLink href={kind === "email" ? `mailto:${value}` : `https://wa.me/${value.replace(/\D/g, "")}`} target={kind === "email" ? "_self" : "_blank"} className={cn("break-all", kind === "phone" && "font-mono tabular-nums")}>{display}</IntroItemLink>
+        <IntroItemLink href={kind === "email" ? `mailto:${value}` : `https://wa.me/${value.replace(/\D/g, "")}`} target={kind === "email" ? "_self" : "_blank"} className={cn("break-all", kind === "phone" && "tabular-nums")}>{display}</IntroItemLink>
       </IntroItemContent>
       <Tooltip>
         <TooltipTrigger render={
@@ -49,7 +49,7 @@ export function ContactItem({kind, value, display = value}: ContactItemProps) {
           </Button>
         } />
         <TooltipContent className="gap-3 px-3 py-2">
-          {label}<kbd className="font-mono text-xs opacity-70">Shift+{kind === "email" ? "E" : "P"}</kbd>
+          {label}<kbd className="text-xs opacity-70">Shift+{kind === "email" ? "E" : "P"}</kbd>
         </TooltipContent>
       </Tooltip>
       <span role="status" aria-live="polite" className="sr-only">{feedback}</span>

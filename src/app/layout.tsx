@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import {site, isPreview} from "@/config/site";
 import {TooltipProvider} from "@/components/ui/tooltip";
-import {JetBrains_Mono, Plus_Jakarta_Sans} from "next/font/google";
+import {Plus_Jakarta_Sans} from "next/font/google";
 import {getLocale} from "next-intl/server";
 import {MotionProvider} from "@/components/motion-provider";
 import {ThemeProvider} from "@/components/theme-provider";
@@ -24,17 +24,10 @@ const jakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  preload: false,
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export default async function RootLayout({children}: {children: React.ReactNode}) {
   const locale = await getLocale();
   return (
-    <html lang={locale} suppressHydrationWarning className={`${jakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}>
+    <html lang={locale} suppressHydrationWarning className={`${jakartaSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <MotionProvider><TooltipProvider>{children}</TooltipProvider></MotionProvider>

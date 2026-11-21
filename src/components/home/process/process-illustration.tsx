@@ -63,7 +63,7 @@ export function ProcessIllustration({active, labels}: Props) {
             </g>}
           </g>
         </g>
-        <text x="0" y={depth + 83} textAnchor="middle" fill="currentColor" stroke="none" className="font-mono text-[12px]">{String(index + 1).padStart(2, "0")}</text>
+        <text x="0" y={depth + 83} textAnchor="middle" fill="currentColor" stroke="none" className="text-[12px]">{String(index + 1).padStart(2, "0")}</text>
         <text x="0" y={depth + 103} textAnchor="middle" fill="currentColor" stroke="none" className="font-sans text-[14px]">{labels[index]}</text>
       </g>;
     })}

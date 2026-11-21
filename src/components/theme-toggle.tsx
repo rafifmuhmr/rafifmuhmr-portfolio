@@ -42,7 +42,7 @@ export function ThemeToggle() {
       </TooltipTrigger>
       <TooltipContent side="bottom" sideOffset={8} className="gap-3 px-3 py-2">
         <span>Toggle mode</span>
-        <kbd className="inline-flex size-5 items-center justify-center rounded border border-background/10 bg-background/15 font-mono text-xs text-background">D</kbd>
+        <kbd className="inline-flex size-5 items-center justify-center rounded border border-background/10 bg-background/15 text-xs text-background">D</kbd>
       </TooltipContent>
     </Tooltip>
   );

@@ -34,7 +34,7 @@ export default async function ProjectPage({params}: Props) {
   const url = projectUrl(project, locale);
   const markdownUrl = `/${locale}/${locale === "id" ? "karya" : "work"}/${project.slug}/markdown`;
   return <main className="w-full px-4 pt-14 pb-16 sm:px-6 sm:pt-20 lg:pt-30">
-    <article className="mx-auto max-w-7xl space-y-12 sm:space-y-16 lg:space-y-20">
+    <article className="mx-auto max-w-7xl flex flex-col section-gap">
       <header className="space-y-8">
         <div className="flex min-w-0 flex-wrap items-center justify-between gap-4">
           <Link href="/work" className="inline-flex items-center gap-2 text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"><ArrowLeftIcon className="size-4" aria-hidden="true" />{t("back")}</Link>
@@ -75,7 +75,7 @@ export default async function ProjectPage({params}: Props) {
         <h2 id="project-process" className="text-xl font-semibold tracking-tight">{t("process")}</h2>
         <ol className="divide-y divide-border">
           {project.process.map((step, index) => <li key={step.title.en} className="flex gap-4 py-6 first:pt-0 last:pb-0 sm:gap-6">
-            <span aria-hidden="true" className="pt-1 font-mono text-xs tabular-nums text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
+            <span aria-hidden="true" className="pt-1 text-xs tabular-nums text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
             <div className="space-y-2">
               <h3 className="text-base font-medium">{step.title[locale]}</h3>
               <p className="max-w-3xl text-base leading-8 text-muted-foreground">{step.description[locale]}</p>

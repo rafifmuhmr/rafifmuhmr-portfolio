@@ -47,7 +47,7 @@ export default async function Home({
           ),
         }}
       />
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 sm:gap-12 lg:gap-16">
+      <div className="mx-auto flex w-full max-w-7xl flex-col section-gap">
         <Hero />
         <Overview />
         <About />

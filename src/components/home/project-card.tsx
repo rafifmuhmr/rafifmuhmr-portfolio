@@ -18,7 +18,7 @@ export function ProjectCard({ project, language, coverPending }: Props) {
     <div className="mt-3 space-y-1">
       <div className="flex items-baseline justify-between gap-3">
       <h3 className="text-base font-medium leading-6 underline-offset-4 decoration-1 [text-decoration-skip-ink:none] group-hover:underline group-focus-visible:underline">{project.title}</h3>
-      <span className="shrink-0 font-mono text-sm text-muted-foreground">{project.year}</span>
+      <span className="shrink-0 text-sm text-muted-foreground">{project.year}</span>
       </div>
       <p className="text-sm leading-6 text-muted-foreground">{project.subtitle[language]}</p>
     </div>

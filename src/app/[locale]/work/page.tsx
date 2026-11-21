@@ -32,7 +32,7 @@ export default async function WorkPage({params}: Props) {
 
   return (
     <main className="w-full px-4 pt-8 pb-16 sm:px-6 sm:pt-12 lg:pt-20">
-      <div className="mx-auto max-w-7xl space-y-12 py-6 sm:space-y-16 sm:py-8 lg:py-10">
+      <div className="mx-auto max-w-7xl flex flex-col section-gap py-6 sm:py-8 lg:py-10">
         <header className="space-y-3">
           <h1 className="text-3xl font-semibold tracking-tight">{nav("workTitle")}</h1>
           <p className="text-sm leading-6 text-muted-foreground">{copy("description")}</p>

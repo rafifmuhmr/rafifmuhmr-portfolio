@@ -1,8 +1,7 @@
 "use client";
 
 import {useSyncExternalStore} from "react";
-import {AnimatePresence, useReducedMotion} from "motion/react";
-import * as m from "motion/react-m";
+import {RollingNumber} from "@/components/ui/rolling-number";
 import {Separator} from "@/components/ui/separator";
 import {useTranslations} from "next-intl";
 import {location} from "@/config/location";
@@ -21,17 +20,6 @@ function subscribe(onChange: () => void) {
 }
 function getSnapshot() { return Math.floor(Date.now() / 60000); }
 function getServerSnapshot() { return null; }
-
-function ClockNumber({value}: {value: string}) {
-  const reduced = useReducedMotion();
-  return <span className="relative inline-flex h-5 w-[2ch] overflow-hidden align-bottom">
-    <AnimatePresence initial={false} mode="popLayout">
-      <m.span key={value} initial={{y: reduced ? 0 : 8, opacity: 0}} animate={{y: 0, opacity: 1}} exit={{y: reduced ? 0 : -8, opacity: 0}} transition={{duration: reduced ? 0 : 0.2}} className="inline-block">
-        {value}
-      </m.span>
-    </AnimatePresence>
-  </span>;
-}
 
 export function LocalTime({timeZone = location.timeZone}: {timeZone?: string}) {
   const epoch = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
@@ -56,7 +44,7 @@ export function LocalTime({timeZone = location.timeZone}: {timeZone?: string}) {
       </IntroItemIcon>
       <IntroItemContent className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <span className="inline-flex items-center gap-2 whitespace-nowrap text-sm leading-5 font-medium text-foreground">
-          <span className="font-mono tabular-nums"><ClockNumber value={clock?.hour ?? "--"} />:<ClockNumber value={clock?.minute ?? "--"} /></span>
+          <span className="tabular-nums"><RollingNumber value={clock?.hour ?? "--"} />:<RollingNumber value={clock?.minute ?? "--"} /></span>
           <span className="font-sans">{clock?.period ?? "--"}</span>
         </span>
         {difference && (

@@ -16,12 +16,12 @@ export default function ServicesPage() {
   const t = useTranslations("ServicesPage");
 
   return (
-    <main className="mx-auto w-full max-w-7xl space-y-8 px-4 pt-8 pb-12 sm:px-6 sm:pt-12 lg:pt-20">
+    <main className="mx-auto w-full max-w-7xl grid justify-items-start section-gap px-4 pt-8 pb-12 sm:px-6 sm:pt-12 lg:pt-20">
       <div className="space-y-3">
         <h1 className="text-3xl font-semibold tracking-tight">{nav("services")}</h1>
         <p className="text-sm leading-6 text-muted-foreground">{t("description")}</p>
       </div>
-      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
           <li key={service} className="space-y-3 rounded-xl border border-border p-5">
             <h2 className="font-medium">{t(`${service}.title`)}</h2>

@@ -72,7 +72,7 @@ export function LanguageSwitcher() {
       </TooltipTrigger>
       <TooltipContent side="bottom" sideOffset={8} className="gap-3 px-3 py-2">
         <span>{t("languageToggle")}</span>
-        <kbd className="inline-flex size-5 items-center justify-center rounded border border-background/10 bg-background/15 font-mono text-xs text-background">L</kbd>
+        <kbd className="inline-flex size-5 items-center justify-center rounded border border-background/10 bg-background/15 text-xs text-background">L</kbd>
       </TooltipContent>
     </Tooltip>
   );

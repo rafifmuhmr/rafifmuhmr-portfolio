@@ -321,5 +321,95 @@
     "mobileApps": "Aplikasi Mobile",
     "socialMedia": "Media Sosial",
     "resultCount": "{count} proyek"
+  },
+  "AboutPage": {
+    "designApproach": {
+      "heading": "Pendekatan desain",
+      "description": "Ini yang gue perhatikan saat merancang website atau aplikasi.",
+      "items": {
+        "goals": {
+          "title": "Mulai dari tujuan pengguna",
+          "description": "Sebelum buka Figma, gue cari tahu siapa yang akan memakai produk, apa yang ingin mereka capai, dan bagian mana yang masih menyulitkan mereka."
+        },
+        "flow": {
+          "title": "Uji alurnya sebelum memoles tampilan",
+          "description": "Gue sketsa beberapa arah desain dan bikin prototipe interaksi utama sejak awal. Dengan mencoba alurnya, gue bisa menemukan langkah yang membingungkan saat masih mudah diubah."
+        },
+        "states": {
+          "title": "Rancang untuk kondisi nyata",
+          "description": "Gue cek bagaimana antarmuka menangani teks panjang, layar kecil, proses loading, dan error. Pengalaman frontend membantu gue mempertimbangkan detail itu saat desainnya masih di Figma."
+        },
+        "handoff": {
+          "title": "Bikin desain yang mudah dikembangkan",
+          "description": "Gue susun pola yang sering muncul jadi komponen yang bisa dipakai ulang dan catat keputusan penting buat developer. Jadi tim punya dasar yang jelas saat produknya berkembang."
+        }
+      }
+    },
+    "heading": "Tentang gue",
+    "uiux": "Desainer UI/UX",
+    "frontend": "Frontend Developer",
+    "graphic": "Desainer Grafis",
+    "metadataDescription": "Kenali Rafif Muhammad Muflihur Rodwa, desainer UI/UX dan co-founder Micholabs dari Banyuwangi, Indonesia.",
+    "intro": "Gue desainer UI/UX dari Banyuwangi, Indonesia. Gue merancang website dan aplikasi dengan berangkat dari apa yang ingin dicapai pengguna. Itu berarti memikirkan pengalaman mereka dari awal sampai akhir, mulai dari cara menemukan informasi sampai apa yang terjadi kalau pembayaran gagal.",
+    "journey": "Gue mulai di frontend development dan desain grafis pada 2024. Pada September 2025, gue mulai fokus ke UI/UX dan ikut mendirikan <company>Micholabs</company>. Di studio, gue mengembangkan ide dari alur pengguna awal sampai antarmuka yang detail di Figma. Pengalaman frontend bikin gue terbiasa mikirin bagaimana desain bekerja di browser. Misalnya, gimana layout menyesuaikan layar kecil, gimana formulir menampilkan error, dan apa yang terjadi setelah tombol diklik. Dari desain grafis, gue belajar pakai tipografi, warna, dan komposisi untuk memperjelas semua itu.",
+    "personal": "Di luar desain, gue suka menulis, bereksperimen dengan teknologi baru, trading, dan bertani.",
+    "workCta": "Lihat karya gue"
+  },
+  "AboutDetails": {
+    "experience": "Pengalaman",
+    "education": "Pendidikan",
+    "projects": "Proyek",
+    "recognition": "Penghargaan & sertifikasi",
+    "experienceDescription": "Pengalaman gue di desain, pengembangan web, dan menjalankan bisnis digital.",
+    "mudapediaFounderTitle": "Founder",
+    "partTime": "Paruh waktu",
+    "mudapediaFounderDescription": "- Mendirikan Mudapedia dan menentukan arahnya sebagai agensi digital.\n- Mengidentifikasi peluang untuk mengarahkan fokus studio ke layanan Web3.\n- Membangun hubungan dengan klien dan mitra serta membantu merumuskan tujuan proyek.",
+    "mudapediaFounderSkills": ["Strategi Bisnis", "Riset Pasar", "Hubungan Klien", "Kemitraan"],
+    "mudapediaCooTitle": "Chief Operating Officer (COO)",
+    "mudapediaCooDescription": "- Mengoordinasikan operasional harian dan menentukan prioritas pengerjaan.\n- Mengawasi pekerjaan desain dan pengembangan di tim teknis.\n- Merapikan alur kerja tim dan memantau proyek dari perencanaan hingga serah terima.",
+    "mudapediaCooSkills": ["Operasional", "Kepemimpinan Tim", "Manajemen Proyek", "Penyelesaian Proyek"],
+    "mudapediaFrontendTitle": "Frontend Developer",
+    "mudapediaFrontendDescription": "- Membangun [Article Landing Page](https://article-landing-page.vercel.app/) yang responsif dan mengembangkan Fashion Landing Page.\n- Membuat [Shayna UI Kit](https://shayna-kit.vercel.app/), membangun [Maile E-commerce Landing Page](https://maile-ecommerce-landing-page.vercel.app/), dan menyelesaikan Finance Company Profile.\n- Mendesain ulang dan membangun kembali situs perusahaan untuk [Mudapedia Digital Indonesia v2](https://mudapediadigitalid.vercel.app/), termasuk layout, navigasi, dan animasinya.\n- Membangun dan merapikan fitur inti untuk web dan mobile dengan layout responsif dan pola interaksi yang konsisten.\n- Memecah kebutuhan yang kompleks, mengevaluasi pilihan teknologi, dan menerapkan solusi yang praktis.",
+    "mudapediaFrontendSkills": ["HTML", "CSS", "JavaScript", "TypeScript", "Next.js", "React Native", "Tailwind CSS", "shadcn/ui", "Figma", "Teamwork", "Research", "Problem Solving"],
+    "mudapediaGraphicTitle": "Desainer Grafis",
+    "mudapediaGraphicDescription": "- Mendesain konten Instagram dan aset media sosial lainnya, termasuk layout e-book, banner, dan grafis digital.\n- Mengolah ide awal menjadi visual yang jelas serta menjaga konsistensi tipografi, warna, dan layout sesuai identitas brand di berbagai platform.",
+    "mudapediaGraphicSkills": ["Figma", "Canva", "Desain Media Sosial", "Identitas Visual"],
+    "mudapediaWordpressDescription": "- Membangun situs WordPress untuk Pavo Coin, Keris Emas, Digital Blockchain ID, USDD, dan Nagapara Coin.\n- Membuat profil perusahaan [Gasvin Artha Suar](https://gasvin.com/), membangun Mudapedia Market, serta membangun dan memelihara [Gasvin Market](https://market.gasvin.com/).\n- Menyesuaikan layout, formulir, dan animasi untuk halaman yang responsif.",
+    "mudapediaWordpressSkills": ["WordPress", "Elementor", "Custom CSS & JS", "WPForms", "Cloudflare", "cPanel Hosting", "Responsive Layouts", "Basic Animation"],
+    "micholabsPeriod": "September 2025 – Sekarang",
+    "fullTime": "Penuh waktu",
+    "micholabsCoFounder": "Co-founder",
+    "micholabsRole": "Desainer UI/UX",
+    "micholabsCoFounderDescription": "- Menentukan arah studio dan memilih proyek yang akan dikerjakan.\n- Memperjelas tujuan, cakupan, dan hasil yang perlu disiapkan sebelum desain dimulai.\n- Mengoordinasikan desain dan pengembangan serta menentukan apa yang perlu disiapkan untuk serah terima.",
+    "micholabsCoFounderSkills": ["Arah Studio", "Cakupan Proyek", "Kolaborasi"],
+    "micholabsDescription": "- Memetakan alur pengguna dan mengeksplorasi layout untuk website dan aplikasi mobile.\n- Mendesain layar responsif dan prototipe interaktif di Figma, termasuk kondisi memuat, kosong, dan error.\n- Mendokumentasikan komponen yang bisa dipakai ulang dan detail interaksi untuk serah terima ke developer.\n- Mendesain dan menerbitkan UI kit melalui Micholabs di UI8.",
+    "micholabsDesignSkills": ["Figma", "Desain UI/UX", "Alur Pengguna", "Prototipe", "Desain Responsif", "Serah Terima Desain"],
+    "earlyExperience": "Awal pengalaman",
+    "earlyRole": "Pengembangan frontend & desain grafis",
+    "earlyDescription": "Gue mulai mendalami frontend dan desain grafis, yang jadi dasar pekerjaan UI/UX gue sekarang.",
+    "officialPavoGraphicTitle": "Desainer Grafis",
+    "officialPavoGraphicDescription": "- Mendesain konten media sosial agar topik yang rumit lebih mudah dipahami.\n- Membuat layout e-book, banner, dan materi presentasi dengan hierarki visual yang jelas.\n- Menjaga identitas visual di Instagram, X, Telegram, dan presentasi.",
+    "officialPavoFounderTitle": "Founder",
+    "officialPavoFounderDescription": "- Menentukan arah proyek dan prioritas awal.\n- Melakukan riset pasar dan membangun hubungan dengan klien serta mitra.",
+    "officialPavoFounderSkills": ["Kepemilikan Bisnis", "Strategi Bisnis", "Riset Pasar", "Kemitraan", "Hukum Bisnis", "Pajak Bisnis"],
+    "officialPavoGraphicSkills": ["Figma", "Canva", "Desain Media Sosial", "Identitas Visual", "Tata Letak Editorial"],
+    "officialPavoCeoDescription": "- Menerjemahkan prioritas bisnis menjadi rencana kerja tim.\n- Mengoordinasikan pekerjaan lintas tim dan mengawasi pengembangan produk.\n- Menggunakan temuan pasar dan masukan dari proyek untuk mengambil keputusan.",
+    "officialPavoCeoSkills": ["Kepemimpinan Tim", "Pengembangan Produk", "Perencanaan Strategis"],
+    "officialPavoCeoTitle": "Chief Executive Officer (CEO)",
+    "seniorSecondary": "Sekolah Menengah Atas",
+    "seniorSecondaryField": "IPA",
+    "juniorSecondary": "Madrasah Tsanawiyah",
+    "higherEducation": "Pendidikan Tinggi",
+    "stikomDegree": "Sarjana",
+    "stikomField": "Ilmu Komputer",
+    "stikomDescription": "- Lulus dengan IPK 3,69 / 4,00.\n- Mempelajari dasar pemrograman dan perancangan algoritma dengan Python.\n- Menggunakan Figma untuk desain UI/UX dan membangun antarmuka web dengan HTML, CSS, React, Tailwind CSS, dan Next.js.\n- Mempelajari kewirausahaan dan strategi bisnis serta mengeksplorasi media digital dengan perangkat desain dan video Adobe.\n- Menjadi pembicara tamu tentang Web3 dan blockchain di acara kampus.",
+    "stikomSkills": ["Python", "Algoritma", "Figma", "HTML", "CSS", "React", "Tailwind CSS", "Next.js", "Kewirausahaan", "Berbicara di Depan Umum"],
+    "seniorSecondaryDescription": "- Menempuh peminatan Matematika dan Ilmu Pengetahuan Alam (MIPA), dengan mata pelajaran matematika, fisika, kimia, dan biologi.\n- Melatih penalaran ilmiah dan interpretasi data lewat praktikum dan pemecahan masalah.",
+    "seniorSecondarySkills": ["Matematika", "Fisika", "Kimia", "Biologi", "Interpretasi Data", "Pemecahan Masalah"],
+    "juniorSecondaryDescription": "- Mempelajari matematika, IPA, IPS, Bahasa Indonesia, dan Bahasa Inggris, serta pendidikan agama Islam.\n- Mempelajari Al-Qur’an, fikih, dan sejarah Islam.",
+    "juniorSecondarySkills": ["Matematika", "IPA", "IPS", "Bahasa Indonesia", "Bahasa Inggris", "Pendidikan Agama Islam"],
+    "educationDescription": "Riwayat pendidikan formal dan bidang studi gue.",
+    "educationEmpty": "Detail pendidikan akan ditambahkan.",
+    "recognitionEmpty": "Detail penghargaan dan sertifikasi akan ditambahkan."
   }
 }

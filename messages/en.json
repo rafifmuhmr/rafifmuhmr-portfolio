@@ -321,5 +321,95 @@
     "mobileApps": "Mobile Apps",
     "socialMedia": "Social Media",
     "resultCount": "{count, plural, one {# project} other {# projects}}"
+  },
+  "AboutPage": {
+    "designApproach": {
+      "heading": "Design approach",
+      "description": "Here’s what I pay attention to when designing a website or app.",
+      "items": {
+        "goals": {
+          "title": "Start with what people came to do",
+          "description": "Before opening Figma, I clarify who the product is for, what they need to accomplish, and where the current experience gets in their way."
+        },
+        "flow": {
+          "title": "Test the flow before polishing the screen",
+          "description": "I sketch a few directions and prototype the key interactions early. Walking through the flow helps me catch confusing steps while they’re still easy to change."
+        },
+        "states": {
+          "title": "Design for the screen you’ll actually ship",
+          "description": "I check how the interface handles long copy, small screens, loading states, and errors. My frontend background helps me account for those details while the design is still in Figma."
+        },
+        "handoff": {
+          "title": "Make it easy to build on",
+          "description": "I organize recurring patterns into reusable components and document the decisions a developer needs for handoff. That gives the team a clear starting point when the product changes."
+        }
+      }
+    },
+    "heading": "About me",
+    "uiux": "UI/UX Designer",
+    "frontend": "Frontend Developer",
+    "graphic": "Graphic Designer",
+    "metadataDescription": "Meet Rafif Muhammad Muflihur Rodwa, a UI/UX designer and co-founder of Micholabs based in Banyuwangi, Indonesia.",
+    "intro": "I’m a UI/UX designer based in Banyuwangi, Indonesia. I design websites and apps around what people came to do. That means thinking through the whole experience, from how someone finds the right information to what happens when a payment fails.",
+    "journey": "I started in frontend development and graphic design in 2024. In September 2025, I began focusing on UI/UX and co-founded <company>Micholabs</company>. At the studio, I take ideas from early user flows to detailed interfaces in Figma. My frontend background helps me make decisions with the browser in mind. I think about how a layout adapts to a smaller screen, how a form handles errors, and what a button does after someone clicks it. Graphic design informs how I use type, color, and composition to make those decisions visible.",
+    "personal": "Away from design, I write, experiment with new technology, and spend time trading and farming.",
+    "workCta": "View my work"
+  },
+  "AboutDetails": {
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "recognition": "Recognition & certifications",
+    "experienceDescription": "My roles in design, development, and running digital businesses.",
+    "mudapediaFounderTitle": "Founder",
+    "partTime": "Part-time",
+    "mudapediaFounderDescription": "- Founded Mudapedia and set its direction as a digital agency.\n- Identified opportunities to shift the studio’s focus toward Web3 services.\n- Built relationships with clients and partners and helped define project goals.",
+    "mudapediaFounderSkills": ["Business Strategy", "Market Research", "Client Relations", "Partnerships"],
+    "mudapediaCooTitle": "Chief Operating Officer (COO)",
+    "mudapediaCooDescription": "- Coordinated daily operations and set delivery priorities.\n- Oversaw design and development work across the technical team.\n- Improved team workflows and tracked projects from planning through delivery.",
+    "mudapediaCooSkills": ["Operations", "Team Leadership", "Project Management", "Product Delivery"],
+    "mudapediaFrontendTitle": "Frontend Developer",
+    "mudapediaFrontendDescription": "- Built the responsive [Article Landing Page](https://article-landing-page.vercel.app/) and developed the Fashion Landing Page.\n- Created [Shayna UI Kit](https://shayna-kit.vercel.app/), built the [Maile E-commerce Landing Page](https://maile-ecommerce-landing-page.vercel.app/), and delivered the Finance Company Profile.\n- Redesigned and rebuilt the company website for [Mudapedia Digital Indonesia v2](https://mudapediadigitalid.vercel.app/), updating its layout, navigation, and animations.\n- Built and refined core features across web and mobile, with responsive layouts and consistent interaction patterns.\n- Broke down complex requirements, evaluated technical options, and implemented practical solutions.",
+    "mudapediaFrontendSkills": ["HTML", "CSS", "JavaScript", "TypeScript", "Next.js", "React Native", "Tailwind CSS", "shadcn/ui", "Figma", "Teamwork", "Research", "Problem Solving"],
+    "mudapediaGraphicTitle": "Graphic Designer",
+    "mudapediaGraphicDescription": "- Designed Instagram posts and other social media assets, along with e-book layouts, banners, and digital graphics.\n- Turned rough concepts into clear visuals and kept typography, color, and layout consistent with the brand across platforms.",
+    "mudapediaGraphicSkills": ["Figma", "Canva", "Social Media Design", "Visual Identity"],
+    "mudapediaWordpressDescription": "- Built WordPress websites for Pavo Coin, Keris Emas, Digital Blockchain ID, USDD, and Nagapara Coin.\n- Created the [Gasvin Artha Suar](https://gasvin.com/) company profile, built Mudapedia Market, and built and maintained [Gasvin Market](https://market.gasvin.com/).\n- Customized layouts, forms, and animations for responsive pages.",
+    "mudapediaWordpressSkills": ["WordPress", "Elementor", "Custom CSS & JS", "WPForms", "Cloudflare", "cPanel Hosting", "Responsive Layouts", "Basic Animation"],
+    "micholabsPeriod": "September 2025 – Present",
+    "fullTime": "Full-time",
+    "micholabsCoFounder": "Co-founder",
+    "micholabsRole": "UI/UX Designer",
+    "micholabsCoFounderDescription": "- Shape the studio’s direction and decide which projects to pursue.\n- Define the goal, scope, and deliverables for each project before design starts.\n- Coordinate design and development and clarify what needs to be ready for handoff.",
+    "micholabsCoFounderSkills": ["Studio Direction", "Project Scoping", "Collaboration"],
+    "micholabsDescription": "- Map user flows and explore layouts for websites and mobile apps.\n- Design responsive screens and interactive prototypes in Figma, including loading, empty, and error states.\n- Document reusable components and interaction details for developer handoff.\n- Design and publish UI kits through Micholabs on UI8.",
+    "micholabsDesignSkills": ["Figma", "UI/UX Design", "User Flows", "Prototyping", "Responsive Design", "Design Handoff"],
+    "earlyExperience": "Early experience",
+    "earlyRole": "Frontend development & graphic design",
+    "earlyDescription": "I began working across frontend development and graphic design, building the foundation for my UI/UX work.",
+    "officialPavoGraphicTitle": "Graphic Designer",
+    "officialPavoGraphicDescription": "- Designed social media graphics that made complex topics easier to understand.\n- Created e-book layouts, banners, and presentation decks with a clear visual hierarchy.\n- Kept the brand consistent across Instagram, X, Telegram, and presentations.",
+    "officialPavoFounderTitle": "Founder",
+    "officialPavoFounderDescription": "- Defined the project’s direction and early priorities.\n- Researched the market and built relationships with clients and partners.",
+    "officialPavoFounderSkills": ["Business Ownership", "Business Strategy", "Market Research", "Partnerships", "Business Law", "Business Tax"],
+    "officialPavoGraphicSkills": ["Figma", "Canva", "Social Media Design", "Visual Identity", "Editorial Layout"],
+    "officialPavoCeoDescription": "- Turned business priorities into plans for the team.\n- Coordinated work across teams and oversaw product development.\n- Used market insights and project feedback to guide decisions.",
+    "officialPavoCeoSkills": ["Team Leadership", "Product Development", "Strategic Planning"],
+    "officialPavoCeoTitle": "Chief Executive Officer (CEO)",
+    "seniorSecondary": "Senior High School",
+    "seniorSecondaryField": "Natural Sciences",
+    "juniorSecondary": "Junior High School",
+    "higherEducation": "College",
+    "stikomDegree": "Bachelor’s Degree",
+    "stikomField": "Computer Science",
+    "stikomDescription": "- Graduated with a GPA of 3.69 / 4.00.\n- Built a foundation in programming and algorithm design with Python.\n- Used Figma for UI/UX design and built web interfaces with HTML, CSS, React, Tailwind CSS, and Next.js.\n- Studied entrepreneurship and business strategy, and explored digital media with Adobe design and video tools.\n- Delivered a guest lecture on Web3 and blockchain at a campus event.",
+    "stikomSkills": ["Python", "Algorithms", "Figma", "HTML", "CSS", "React", "Tailwind CSS", "Next.js", "Entrepreneurship", "Public Speaking"],
+    "seniorSecondaryDescription": "- Completed the Mathematics and Natural Sciences track (MIPA), studying mathematics, physics, chemistry, and biology.\n- Practiced scientific reasoning and data interpretation through lab experiments and problem solving.",
+    "seniorSecondarySkills": ["Mathematics", "Physics", "Chemistry", "Biology", "Data Interpretation", "Problem Solving"],
+    "juniorSecondaryDescription": "- Studied mathematics, science, social studies, Indonesian, and English alongside Islamic studies.\n- Learned about the Quran, fiqh, and Islamic history.",
+    "juniorSecondarySkills": ["Mathematics", "Science", "Social Studies", "Indonesian", "English", "Islamic Studies"],
+    "educationDescription": "My formal education and areas of study.",
+    "educationEmpty": "Education details coming soon.",
+    "recognitionEmpty": "Recognition and certification details coming soon."
   }
 }

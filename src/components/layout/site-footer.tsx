@@ -43,7 +43,7 @@ export async function SiteFooter({locale}: {locale: string}) {
           </div>
         </div>
         <div className="flex items-start justify-between gap-3 border-t border-border pt-10 pb-10 text-sm text-muted-foreground sm:items-center md:pt-14 md:pb-14">
-          <p className="flex flex-col gap-1 font-medium"><span>© <span className="font-mono tabular-nums">{new Date().getFullYear()}</span> rafifmuhmr.</span><span>{t("rights")}</span></p>
+          <p className="flex flex-col gap-1 font-medium"><span>© <span className="tabular-nums">{new Date().getFullYear()}</span> rafifmuhmr.</span><span>{t("rights")}</span></p>
           <p className="flex shrink-0 flex-col items-end gap-1 text-right"><span>Crafted by</span>{instagramUrl ? <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline-offset-4 decoration-1 [text-decoration-skip-ink:none] hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">@rafifmuhmr</a> : "@rafifmuhmr"}</p>
         </div>
         <DeferredWordmark />

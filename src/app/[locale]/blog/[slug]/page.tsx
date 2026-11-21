@@ -63,12 +63,12 @@ export default async function BlogPostPage({params}: Props) {
       ...(post.cover ? {image: new URL(post.cover, site.url).href} : {}),
       citation: post.references.map((reference) => reference.url),
     }).replace(/</g, "\\u003c")}} />}
-    <div className="mx-auto w-full max-w-7xl space-y-8 sm:space-y-12">
+    <div className="mx-auto w-full max-w-7xl flex flex-col section-gap">
       <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-2 sm:gap-4">
         <BlogBreadcrumb title={post.title[locale]} label={t("breadcrumb")} />
         <ProjectPageActions kind="article" title={post.title[locale]} url={blogUrl(post, locale)} markdownUrl={`/${locale}/blog/${post.slug}/markdown`} markdown={blogMarkdown(post, locale)} previous={adjacent(previous)} next={adjacent(next)} />
       </div>
-      <article className="grid min-w-0 grid-cols-1 items-start gap-y-8 sm:gap-y-12 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-x-12 xl:gap-x-16">
+      <article className="grid min-w-0 grid-cols-1 items-start section-gap lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-x-12 xl:gap-x-16">
         <header className="min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
           <span className="inline-flex h-6 items-center rounded-md border border-border bg-muted/50 px-2 text-xs font-medium text-muted-foreground">{post.category[locale]}</span>
           <div className="space-y-4">
@@ -86,14 +86,14 @@ export default async function BlogPostPage({params}: Props) {
           <summary className="cursor-pointer text-sm font-medium">{t("onThisPage")}</summary>
           <div className="pt-4"><TableOfContents items={contents} label={t("onThisPage")} /></div>
         </details>
-        <div className="min-w-0 space-y-8 sm:space-y-12 lg:col-start-1 lg:row-start-2">
+        <div className="min-w-0 flex flex-col section-gap lg:col-start-1 lg:row-start-2">
         <figure className="space-y-3">
           <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-[12px] bg-muted px-6 text-center">
             {post.cover ? <Image src={post.cover} alt={post.coverAlt[locale]} fill sizes="(min-width: 1280px) 960px, (min-width: 1024px) 70vw, 100vw" className="object-cover" /> : <span className="text-sm text-muted-foreground">{t("coverPending")}</span>}
           </div>
           {post.cover && <figcaption className="text-xs leading-5 text-muted-foreground">{t("photoBy")} <a href={post.coverCredit.url} target="_blank" rel="noopener noreferrer" className="underline-offset-4 hover:text-foreground hover:underline">{post.coverCredit.name} / Unsplash</a></figcaption>}
         </figure>
-        <div className="min-w-0 space-y-10 sm:space-y-12">
+        <div className="min-w-0 flex flex-col section-gap">
           {post.sections.map((section) => <section key={section.id} aria-labelledby={section.id} className="space-y-4">
             <h2 id={section.id} tabIndex={-1} className="scroll-mt-56 outline-none text-xl font-semibold tracking-tight sm:text-2xl">{section.title[locale]}</h2>
             {section.paragraphs[locale].map((paragraph) => <p key={paragraph} className="text-base leading-8 text-muted-foreground">{paragraph}</p>)}

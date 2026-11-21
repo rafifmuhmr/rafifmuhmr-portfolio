@@ -35,7 +35,7 @@ export function ProjectFilters({ projects }: { projects: FilterableProject[] }) 
               className={cn("inline-flex h-8 cursor-pointer items-center gap-2 rounded-lg border px-3 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring", filter === key ? "border-primary bg-primary text-primary-foreground" : "border-border bg-muted text-foreground hover:bg-accent")}
             >
               {t(key)}
-              <span className={cn("font-mono tabular-nums", filter === key ? "text-primary-foreground/70" : "text-muted-foreground")}>{count}</span>
+              <span className={cn("tabular-nums", filter === key ? "text-primary-foreground/70" : "text-muted-foreground")}>{count}</span>
             </button>
           );
         })}
