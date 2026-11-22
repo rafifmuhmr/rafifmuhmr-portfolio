@@ -359,7 +359,9 @@
     "experience": "Pengalaman",
     "education": "Pendidikan",
     "projects": "Proyek",
-    "recognition": "Penghargaan & sertifikasi",
+    "recognition": "Penghargaan & Sertifikasi",
+    "recognitionCategories": {"certificate": "Sertifikat", "award": "Penghargaan", "trademark": "Merek Dagang"},
+    "recognitionDescription": "Penghargaan, sertifikasi, bootcamp, dan pencapaian lainnya.",
     "experienceDescription": "Pengalaman gue di desain, pengembangan web, dan menjalankan bisnis digital.",
     "mudapediaFounderTitle": "Founder",
     "partTime": "Paruh waktu",
@@ -410,6 +412,6 @@
     "juniorSecondarySkills": ["Matematika", "IPA", "IPS", "Bahasa Indonesia", "Bahasa Inggris", "Pendidikan Agama Islam"],
     "educationDescription": "Riwayat pendidikan formal dan bidang studi gue.",
     "educationEmpty": "Detail pendidikan akan ditambahkan.",
-    "recognitionEmpty": "Detail penghargaan dan sertifikasi akan ditambahkan."
+    "recognitionEmpty": "Belum ada entri."
   }
 }

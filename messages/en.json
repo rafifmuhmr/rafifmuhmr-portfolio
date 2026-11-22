@@ -359,7 +359,9 @@
     "experience": "Experience",
     "education": "Education",
     "projects": "Projects",
-    "recognition": "Recognition & certifications",
+    "recognition": "Recognition",
+    "recognitionCategories": {"certificate": "Certificate", "award": "Award", "trademark": "Trademark"},
+    "recognitionDescription": "Awards, certifications, bootcamps, and other achievements.",
     "experienceDescription": "My roles in design, development, and running digital businesses.",
     "mudapediaFounderTitle": "Founder",
     "partTime": "Part-time",
@@ -410,6 +412,6 @@
     "juniorSecondarySkills": ["Mathematics", "Science", "Social Studies", "Indonesian", "English", "Islamic Studies"],
     "educationDescription": "My formal education and areas of study.",
     "educationEmpty": "Education details coming soon.",
-    "recognitionEmpty": "Recognition and certification details coming soon."
+    "recognitionEmpty": "No entries yet."
   }
 }

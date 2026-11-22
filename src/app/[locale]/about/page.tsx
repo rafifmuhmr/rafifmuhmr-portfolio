@@ -11,6 +11,7 @@ import { site } from "@/config/site";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
+import { AboutRecognition } from "./about-recognition";
 import { AboutEducation } from "./about-education";
 import { AboutExperience } from "./about-experience";
 import { ApproachSteps } from "./approach-steps";
@@ -108,6 +109,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
         <AboutExperience />
         <AboutEducation />
+        <AboutRecognition />
       </div>
     </main>
   );
