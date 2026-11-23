@@ -13,7 +13,7 @@ const steps = ["understand", "structure", "design", "refine", "deliver"] as cons
 export function WorkProcess() {
   const t = useTranslations("WorkProcess");
   const [active, setActive] = useState<number | null>(null);
-  return <section id="process" aria-labelledby="work-process-title" className="min-w-0 py-6 sm:py-8 lg:py-10 motion-reduce:[&_[data-slot=accordion-content]]:animate-none">
+  return <section id="process" aria-labelledby="work-process-title" className="min-w-0 py-6 sm:py-8 lg:py-10 motion-reduce:**:data-[slot=accordion-content]:animate-none">
     <header className="mb-8 space-y-3">
       <h2 id="work-process-title" className="text-xl font-semibold tracking-tight">{t("title")}</h2>
       <p className="text-sm leading-6 text-muted-foreground">{t("description")}</p>

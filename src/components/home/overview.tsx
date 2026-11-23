@@ -46,7 +46,7 @@ export async function Overview() {
               <li key={social.platform}>
                 <a href={social.href} target="_blank" rel="noopener noreferrer"
                   className="group flex min-h-6 w-fit items-center gap-4 rounded-md text-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
-                  <IconTile className="size-6 transition-colors group-hover:text-foreground [&_[data-social-icon]]:size-4"><SocialIcon platform={social.platform} /></IconTile>
+                  <IconTile className="size-6 transition-colors group-hover:text-foreground **:data-social-icon:size-4"><SocialIcon platform={social.platform} /></IconTile>
                   <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                     <span className="font-medium">{social.label}</span>
                     <span className="text-muted-foreground underline-offset-4 decoration-1 [text-decoration-skip-ink:none] transition-colors group-hover:text-foreground group-hover:underline">@rafifmuhmr</span>
