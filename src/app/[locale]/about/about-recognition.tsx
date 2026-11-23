@@ -20,9 +20,9 @@ type RecognitionEntry = {
 const recognitions: RecognitionEntry[] = [
   {
     id: "responsible-ai",
-    title: "Certificate of ResponsibleAI",
+    title: "AI Upskilling Program with RSA",
     issuer: "Nortis AI",
-    issued: "20.06.2025",
+    issued: "06.2025",
     category: "certificate",
     tags: ["Responsible AI", "AI Ethics"],
     logo: "/images/recognition/logo-nortis-ai.png",
@@ -89,16 +89,6 @@ const recognitions: RecognitionEntry[] = [
     credentialUrl: "https://drive.google.com/file/d/1cuoHR29dH-zXPoT0FXIM3zlSozuSfosw/view",
   },
   {
-    id: "wordpress-development",
-    title: "WordPress Development",
-    issuer: "Special Skill",
-    issued: "20.11.2025",
-    category: "certificate",
-    tags: ["WordPress"],
-    logo: "/images/recognition/logo-special-skill.png",
-    credentialUrl: "https://drive.google.com/file/d/1XmKU82eK_1nB3v8cSGIPnL_gWZWRIKj3/view",
-  },
-  {
     id: "ethereum-builder",
     title: "Ethereum Builder Certificate",
     issuer: "HackQuest",
@@ -117,6 +107,16 @@ const recognitions: RecognitionEntry[] = [
     tags: ["Web Development", "Coding Fundamentals"],
     logo: "/images/recognition/logo-aksademy.png",
     credentialUrl: "https://drive.google.com/file/d/1sd8pBnxFBkIx-wBDQuH6oii-AoVX-Z2c/view",
+  },
+  {
+    id: "aksademy-ui-ux-design-figma",
+    title: "Fullstack Intensive Bootcamp: UI-UX Design with Figma",
+    issuer: "Aksademy",
+    issued: "12.2025",
+    category: "certificate",
+    tags: ["UI/UX Design", "Figma"],
+    logo: "/images/recognition/logo-aksademy.png",
+    credentialUrl: "https://drive.google.com/file/d/1KMmgOVRateZ0ma4ab37J7REireJC2OvZ/view?usp=sharing",
   },
 ];
 
@@ -174,6 +174,7 @@ export async function AboutRecognition() {
                   <ul className="flex flex-col gap-4">
                     {entries.map(({ id, title, issued, tags, category, credentialUrl }) => {
                       const Row = credentialUrl ? "a" : "div";
+                      const timeline = issued?.split(".").slice(-2).join(".");
 
                       return (
                         <li key={id} className="group/entry relative">
@@ -196,10 +197,10 @@ export async function AboutRecognition() {
                             )}
                             <div className="col-start-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
                               <span>{t(`recognitionCategories.${category}`)}</span>
-                              {issued && (
+                              {timeline && (
                                 <span className="inline-flex items-center gap-2 tabular-nums">
                                   <Separator render={<span />} orientation="vertical" className="data-vertical:h-4 data-vertical:self-center" aria-hidden />
-                                  {issued.slice(3)}
+                                  {timeline}
                                 </span>
                               )}
                             </div>
