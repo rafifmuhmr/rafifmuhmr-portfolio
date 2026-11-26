@@ -63,7 +63,7 @@ export default async function ServicesPage({ params }: Props) {
               </header>
 
               <div className="min-w-0 space-y-6 lg:col-span-2">
-                <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+                <p className="text-base leading-7 text-muted-foreground">
                   {t(`${service}.description`)}
                 </p>
                 {service === "uiux" && (
