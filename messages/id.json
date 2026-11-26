@@ -298,18 +298,39 @@
     "whatsapp": "Chat lewat WhatsApp"
   },
   "ServicesPage": {
-    "description": "Gue bantu mewujudkan ide jadi pengalaman digital yang jelas dan mudah dipakai.",
+    "description": "Gue mendesain website dan aplikasi, membangun frontend responsif, dan membuat aset grafis untuk kanal digital.",
     "uiux": {
       "title": "Desain UI/UX",
-      "description": "Alur pengguna, wireframe, dan antarmuka responsif untuk website dan aplikasi."
+      "description": "Gue petakan kebutuhan pengguna, uji interaksi utama lewat prototipe, lalu rapikan desain di Figma supaya siap dikembangkan.",
+      "deliverables": [
+        "Antarmuka website dan aplikasi mobile",
+        "Alur pengguna dan wireframe",
+        "Prototipe interaktif di Figma",
+        "Komponen yang bisa dipakai ulang dan handoff ke developer"
+      ]
     },
     "frontend": {
-      "title": "Pengembangan frontend",
-      "description": "Website responsif dari desain yang sudah disepakati, dengan perhatian pada aksesibilitas dan performa."
+      "title": "Pengembangan Frontend",
+      "description": "Gue ubah desain yang sudah disepakati jadi website responsif dengan React, Next.js, dan Tailwind CSS. Gue cek layout dan interaksinya di berbagai ukuran layar, termasuk navigasi keyboard dan performa.",
+      "deliverables": [
+        "Landing page dan website pemasaran",
+        "Implementasi desain Figma yang responsif",
+        "Komponen React yang bisa dipakai ulang",
+        "Pengecekan aksesibilitas dan performa"
+      ]
     },
     "graphic": {
-      "title": "Desain grafis",
-      "description": "Aset visual untuk mendukung identitas brand lo di berbagai kanal digital."
+      "title": "Desain Grafis",
+      "description": "Gue buat aset grafis sesuai arah visual brand lo, dengan layout dan format yang disesuaikan untuk tiap kanal.",
+      "deliverables": [
+        "Konten visual media sosial",
+        "Banner digital",
+        "Layout e-book"
+      ]
+    },
+    "pricing": {
+      "title": "Cara penentuan harga",
+      "description": "Harga tergantung lingkup pekerjaan, hasil yang dibutuhkan, dan tenggat proyek. Ceritain proyek lo, nanti gue siapkan penawaran yang sesuai."
     }
   },
   "WorkPage": {

@@ -298,18 +298,39 @@
     "whatsapp": "Chat on WhatsApp"
   },
   "ServicesPage": {
-    "description": "I help turn ideas into clear, useful digital experiences.",
+    "description": "I design websites and apps, build responsive frontends, and create graphics for digital channels.",
     "uiux": {
-      "title": "UI/UX design",
-      "description": "User flows, wireframes, and responsive interfaces for websites and apps."
+      "title": "UI/UX Design",
+      "description": "I map what people need to do, test key interactions in a prototype, and turn the agreed direction into Figma screens ready for development.",
+      "deliverables": [
+        "Website and mobile app interfaces",
+        "User flows and wireframes",
+        "Interactive Figma prototypes",
+        "Reusable components and developer handoff"
+      ]
     },
     "frontend": {
-      "title": "Frontend development",
-      "description": "Responsive websites built from approved designs, with attention to accessibility and performance."
+      "title": "Frontend Development",
+      "description": "I build responsive websites from approved designs using React, Next.js, and Tailwind CSS. I check how layouts and interactions behave across screen sizes and account for keyboard use and performance.",
+      "deliverables": [
+        "Landing pages and marketing websites",
+        "Responsive implementation from Figma",
+        "Reusable React components",
+        "Accessibility and performance checks"
+      ]
     },
     "graphic": {
-      "title": "Graphic design",
-      "description": "Visual assets that support your brand across digital channels."
+      "title": "Graphic Design",
+      "description": "I create digital graphics that follow your brand’s visual direction, adapting layouts and formats to where people will see them.",
+      "deliverables": [
+        "Social media graphics",
+        "Digital banners",
+        "E-book layouts"
+      ]
+    },
+    "pricing": {
+      "title": "How pricing works",
+      "description": "Pricing depends on the scope, deliverables, and timeline. Share what you’re working on, and I’ll put together a quote."
     }
   },
   "WorkPage": {
