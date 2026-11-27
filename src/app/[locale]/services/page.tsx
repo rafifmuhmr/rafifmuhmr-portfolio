@@ -1,4 +1,4 @@
-import { HandShakeIcon } from "@solar-icons/react/linear";
+import { CodeCircleIcon, HandShakeIcon, SelectionIcon } from "@solar-icons/react/linear";
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -9,8 +9,13 @@ import { buttonVariants } from "@/components/ui/button";
 import { projects } from "@/config/projects";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { IconTile } from "@/vendor/chanhdai/components/ui/icon-tile";
 
-const services = ["uiux", "frontend", "graphic"] as const;
+const services = [
+  { service: "uiux", Icon: SelectionIcon },
+  { service: "frontend", Icon: CodeCircleIcon },
+  { service: "graphic", Icon: SelectionIcon },
+] as const;
 const designExamples = projects.filter(({ slug }) => slug === "pulseco" || slug === "payra");
 
 type Props = { params: Promise<{ locale: string }> };
@@ -45,21 +50,24 @@ export default async function ServicesPage({ params }: Props) {
         </header>
 
         <div className="divide-y divide-border border-y border-border">
-          {services.map((service) => (
+          {services.map(({ service, Icon }) => (
             <section
               key={service}
               aria-labelledby={`service-${service}-title`}
               className="grid gap-6 py-8 sm:py-10 lg:grid-cols-3 lg:py-12"
             >
-              <header className="space-y-3">
+              <header className="grid grid-cols-[auto_minmax(0,1fr)] content-start items-center gap-3">
+                <IconTile aria-hidden><Icon className="size-4" /></IconTile>
                 <h2 id={`service-${service}-title`} className="text-xl font-semibold tracking-tight">
                   {t(`${service}.title`)}
                 </h2>
-                <ul className="list-disc space-y-1.5 pl-5 text-sm leading-6 text-muted-foreground">
-                  {(t.raw(`${service}.deliverables`) as string[]).map((deliverable) => (
-                    <li key={deliverable}>{deliverable}</li>
-                  ))}
-                </ul>
+                <div className="typeset-description col-start-2">
+                  <ul>
+                    {(t.raw(`${service}.deliverables`) as string[]).map((deliverable) => (
+                      <li key={deliverable}>{deliverable}</li>
+                    ))}
+                  </ul>
+                </div>
               </header>
 
               <div className="min-w-0 space-y-6 lg:col-span-2">
