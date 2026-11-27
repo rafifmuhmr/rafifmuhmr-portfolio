@@ -148,6 +148,11 @@ export const stackGroups = [
         "href": "https://chatgpt.com/"
       },
       {
+        "name": "Codex",
+        "icon": "codex",
+        "href": "https://openai.com/codex/"
+      },
+      {
         "name": "Claude",
         "icon": "claude",
         "href": "https://claude.ai/"

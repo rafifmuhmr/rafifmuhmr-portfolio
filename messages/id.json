@@ -297,6 +297,31 @@
     "email": "Kirim email",
     "whatsapp": "Chat lewat WhatsApp"
   },
+  "BookmarksPage": {
+    "description": "Kumpulan referensi, tools, dan website buat desain dan pengembangan frontend.",
+    "categories": {
+      "design": "Desain",
+      "frontend": "Frontend",
+      "inspiration": "Inspirasi"
+    },
+    "items": {
+      "figma": "Jelajahi UI kit, template, dan plugin yang dibagikan komunitas desainer.",
+      "shadcn": "Jelajahi komponen aksesibel yang bisa ditambahkan ke codebase sendiri.",
+      "tailwind": "Cari utility class, layout responsif, dan token tema.",
+      "chanhdai": "Portofolio pribadi dengan detail UI dan koleksi komponen.",
+      "tailark": "Jelajahi blok landing page buat referensi layout dan komposisi.",
+      "mobbin": "Lihat contoh layar dan alur dari aplikasi nyata, seperti onboarding dan checkout.",
+      "pageflows": "Tonton rekaman alur produk untuk lihat bagaimana interaksi berpindah dari satu layar ke layar lain.",
+      "behance": "Jelajahi studi kasus identitas visual, desain grafis, dan UI.",
+      "dribbble": "Jelajahi konsep UI, ilustrasi, dan karya branding dari para desainer.",
+      "mdn": "Cari referensi API web, HTML, CSS, JavaScript, dan kompatibilitas browser.",
+      "nextjs": "Baca panduan App Router untuk layout, rendering, dan pengambilan data.",
+      "hairline": "Jelajahi komponen interaktif dan pola animasi.",
+      "landbook": "Cari referensi website untuk layout, tipografi, dan arah visual.",
+      "godly": "Jelajahi website dengan arah visual dan interaksi yang khas.",
+      "nuha": "Lihat cara seorang desainer mengelompokkan koleksi tools dan referensinya."
+    }
+  },
   "ServicesPage": {
     "description": "Gue mendesain website dan aplikasi, membangun frontend responsif, dan membuat aset grafis untuk kanal digital.",
     "uiux": {

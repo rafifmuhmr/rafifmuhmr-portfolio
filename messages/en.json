@@ -297,6 +297,31 @@
     "email": "Email me",
     "whatsapp": "Chat on WhatsApp"
   },
+  "BookmarksPage": {
+    "description": "A collection of references, tools, and websites for design and frontend development.",
+    "categories": {
+      "design": "Design",
+      "frontend": "Frontend",
+      "inspiration": "Inspiration"
+    },
+    "items": {
+      "figma": "Explore UI kits, templates, and plugins shared by designers.",
+      "shadcn": "Browse accessible components you can add to your own codebase.",
+      "tailwind": "Look up utilities, responsive layouts, and theme tokens.",
+      "chanhdai": "A personal portfolio with thoughtful UI details and a component registry.",
+      "tailark": "Browse landing page blocks for layout and composition ideas.",
+      "mobbin": "Reference real app screens and flows for patterns like onboarding and checkout.",
+      "pageflows": "Watch recordings of product flows to see how interfaces behave between screens.",
+      "behance": "Explore visual identity, graphic design, and UI case studies.",
+      "dribbble": "Browse UI concepts, illustrations, and branding work from designers.",
+      "mdn": "Look up web APIs, HTML, CSS, JavaScript, and browser compatibility.",
+      "nextjs": "Read App Router guides for layouts, rendering, and data fetching.",
+      "hairline": "Explore interactive components and animation patterns.",
+      "landbook": "Browse website references for page layouts, typography, and visual direction.",
+      "godly": "Explore websites with distinctive art direction and interactions.",
+      "nuha": "See how a designer organizes a personal collection of tools and references."
+    }
+  },
   "ServicesPage": {
     "description": "I design websites and apps, build responsive frontends, and create graphics for digital channels.",
     "uiux": {

@@ -26,6 +26,7 @@ import Icon21 from "@thesvg/react/bun";
 import Icon22 from "@thesvg/react/yarn";
 import Icon23 from "@thesvg/react/pnpm";
 import Icon24 from "@thesvg/react/openai-chatgpt";
+import CodexIcon from "@thesvg/react/codex";
 import Icon25 from "@thesvg/react/claude";
 import Icon26 from "@thesvg/react/gemini";
 import Icon27 from "@thesvg/react/git";
@@ -53,7 +54,12 @@ export function StackIcon({name}: {name: string}) {
     case "react": return <Logo mono={<Icon7 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon7 variant="light" className="size-full dark:hidden" /><Icon7 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "nextdotjs": return <Logo mono={<Icon8 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon8 className="size-full" />} />;
     case "tailwind-css": return <Logo mono={<Icon9 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon9 className="size-full" />} />;
-    case "shadcn-ui": return <Logo mono={<Icon10 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon10 variant="light" className="size-full dark:hidden" /><Icon10 variant="dark" className="hidden size-full dark:block" /></>} />;
+    case "shadcn-ui":
+      return (
+        <span aria-hidden="true" className="block size-3.5 shrink-0 text-muted-foreground transition-colors duration-200 group-hover/stack:text-foreground group-focus-visible/stack:text-foreground dark:group-hover/stack:text-white dark:group-focus-visible/stack:text-white motion-reduce:transition-none">
+          <Icon10 variant="mono" className="size-full [&_path]:fill-current" />
+        </span>
+      );
     case "radix-ui": return <Logo mono={<Icon11 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon11 variant="light" className="size-full dark:hidden" /><Icon11 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "base-ui": return <Logo mono={<Icon12 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon12 variant="light" className="size-full dark:hidden" /><Icon12 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "motion": return <Logo mono={<Icon13 className="size-full grayscale opacity-70" />} color={<><Icon13 variant="light" className="size-full dark:hidden" /><Icon13 variant="dark" className="hidden size-full dark:block" /></>} />;
@@ -68,6 +74,14 @@ export function StackIcon({name}: {name: string}) {
     case "yarn": return <Logo mono={<Icon22 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon22 className="size-full [&_.st0]:fill-[#2C8EBB] [&_.st1]:fill-white" />} />;
     case "pnpm": return <Logo mono={<Icon23 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon23 variant="light" className="size-full dark:hidden" /><Icon23 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "openai-chatgpt": return <Logo mono={<Icon24 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon24 className="size-full" />} />;
+    case "codex":
+      return (
+        <CodexIcon
+          aria-hidden="true"
+          fill="currentColor"
+          className="size-3.5 shrink-0 text-muted-foreground transition-colors duration-200 group-hover/stack:text-foreground group-focus-visible/stack:text-foreground motion-reduce:transition-none"
+        />
+      );
     case "claude": return <Logo mono={<Icon25 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon25 className="size-full" />} />;
     case "gemini": return <Logo mono={<Icon26 className="size-full grayscale opacity-70" />} color={<Icon26 className="size-full" />} />;
     case "git": return <Logo mono={<Icon27 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon27 className="size-full" />} />;
