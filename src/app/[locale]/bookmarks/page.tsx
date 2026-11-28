@@ -209,7 +209,10 @@ export default async function BookmarksPage({ params }: PendingPageProps) {
                             )}
                           </span>
                           <span className="min-w-0 underline-offset-4 group-hover:underline group-focus-visible:underline">{item.title}</span>
-                          <ArrowRightUpIcon className="size-3 shrink-0 text-muted-foreground group-hover:text-foreground group-focus-visible:text-foreground" aria-hidden />
+                          <ArrowRightUpIcon
+                            className="size-3 shrink-0 opacity-0 transition-[opacity,translate] duration-200 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 motion-safe:-translate-x-0.5 motion-safe:translate-y-0.5 motion-safe:group-hover:translate-none motion-safe:group-focus-visible:translate-none motion-reduce:transition-none"
+                            aria-hidden
+                          />
                         </span>
                         <span className="block pl-7 leading-6 text-muted-foreground">{t(`items.${item.id}`)}</span>
                       </a>
