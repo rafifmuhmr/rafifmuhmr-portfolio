@@ -173,6 +173,11 @@ export const stackGroups = [
         "href": "https://github.com/"
       },
       {
+        "name": "Docker",
+        "icon": "docker",
+        "href": "https://www.docker.com/"
+      },
+      {
         "name": "Vercel",
         "icon": "vercel",
         "href": "https://vercel.com/"

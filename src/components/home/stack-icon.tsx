@@ -52,7 +52,7 @@ export function StackIcon({name}: {name: string}) {
     case "python": return <Logo mono={<Icon5 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon5 className="size-full" />} />;
     case "rust": return <Logo mono={<Icon6 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon6 variant="light" className="size-full dark:hidden" /><Icon6 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "react": return <Logo mono={<Icon7 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon7 variant="light" className="size-full dark:hidden" /><Icon7 variant="dark" className="hidden size-full dark:block" /></>} />;
-    case "nextdotjs": return <Logo mono={<Icon8 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon8 className="size-full" />} />;
+    case "nextdotjs": return <Logo mono={<Icon8 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon8 className="size-full dark:invert" />} />;
     case "tailwind-css": return <Logo mono={<Icon9 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon9 className="size-full" />} />;
     case "shadcn-ui":
       return (
@@ -62,17 +62,23 @@ export function StackIcon({name}: {name: string}) {
       );
     case "radix-ui": return <Logo mono={<Icon11 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon11 variant="light" className="size-full dark:hidden" /><Icon11 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "base-ui": return <Logo mono={<Icon12 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon12 variant="light" className="size-full dark:hidden" /><Icon12 variant="dark" className="hidden size-full dark:block" /></>} />;
-    case "motion": return <Logo mono={<Icon13 className="size-full grayscale opacity-70" />} color={<><Icon13 variant="light" className="size-full dark:hidden" /><Icon13 variant="dark" className="hidden size-full dark:block" /></>} />;
+    case "motion": return <Logo mono={<Icon13 className="size-full not-dark:[&_path]:fill-current dark:grayscale dark:opacity-70" />} color={<><Icon13 variant="light" className="size-full dark:hidden" /><Icon13 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "nodedotjs": return <Logo mono={<Icon14 className="size-full grayscale opacity-70" />} color={<Icon14 className="size-full" />} />;
     case "express": return <Logo mono={<Icon15 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon15 variant="mono" className="size-full text-foreground [&_path]:fill-current" />} />;
-    case "mysql": return <Logo mono={<Icon16 variant="light" className="size-full grayscale opacity-70" />} color={<Icon16 variant="light" className="size-full" />} />;
+    case "mysql": return <Logo mono={<Icon16 variant="light" className="size-full not-dark:grayscale not-dark:opacity-70 dark:[&_path]:fill-current" />} color={<Icon16 variant="light" className="size-full" />} />;
     case "postgresql": return <Logo mono={<Icon17 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon17 className="size-full" />} />;
     case "mongodb": return <Logo mono={<Icon18 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon18 className="size-full" />} />;
     case "supabase": return <Logo mono={<Icon19 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon19 className="size-full" />} />;
     case "sanity": return <Logo mono={<Icon20 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon20 variant="mono" className="size-full text-foreground [&_path]:fill-current" />} />;
-    case "bun": return <Logo mono={<Icon21 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon21 fill="#000" className="size-full" />} />;
+    case "bun": return <Logo mono={<Icon21 fill="#000" className="size-full grayscale opacity-70" />} color={<Icon21 fill="#000" className="size-full" />} />;
     case "yarn": return <Logo mono={<Icon22 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon22 className="size-full [&_.st0]:fill-[#2C8EBB] [&_.st1]:fill-white" />} />;
-    case "pnpm": return <Logo mono={<Icon23 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon23 variant="light" className="size-full dark:hidden" /><Icon23 variant="dark" className="hidden size-full dark:block" /></>} />;
+    case "pnpm":
+      return (
+        <span aria-hidden="true" className="block size-3.5 shrink-0 grayscale transition-[filter] duration-200 group-hover/stack:grayscale-0 group-focus-visible/stack:grayscale-0 motion-reduce:transition-none">
+          <Icon23 variant="light" className="size-full dark:hidden" />
+          <Icon23 variant="dark" className="hidden size-full dark:block" />
+        </span>
+      );
     case "openai-chatgpt": return <Logo mono={<Icon24 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon24 className="size-full" />} />;
     case "codex":
       return (
@@ -86,6 +92,17 @@ export function StackIcon({name}: {name: string}) {
     case "gemini": return <Logo mono={<Icon26 className="size-full grayscale opacity-70" />} color={<Icon26 className="size-full" />} />;
     case "git": return <Logo mono={<Icon27 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon27 className="size-full" />} />;
     case "github": return <Logo mono={<Icon28 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon28 variant="light" className="size-full dark:hidden" /><Icon28 variant="dark" className="hidden size-full dark:block" /></>} />;
+    case "docker":
+      return (
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 25 15"
+          fill="currentColor"
+          className="size-3.5 shrink-0 text-muted-foreground transition-colors duration-200 group-hover/stack:text-[#101010] group-focus-visible/stack:text-[#101010] dark:group-hover/stack:text-[#FFFDFA] dark:group-focus-visible/stack:text-[#FFFDFA] motion-reduce:transition-none"
+        >
+          <path d="M21.334,0C19.833,0 18.617,1.217 18.617,2.717C18.616,1.217 17.4,0 15.899,0L12.455,0L12.455,2.188C12.455,3.866 13.816,5.226 15.494,5.226L17.215,5.226L17.215,6.854L15.545,6.854C12.94,6.854 10.828,4.743 10.828,2.138L10.828,0L4.423,0C1.98,0 -0,1.98 -0,4.423L-0,10.516C-0,12.958 1.98,14.938 4.423,14.938L15.545,14.938C17.988,14.938 19.969,12.958 19.969,10.516L19.969,5.226L21.739,5.226C23.417,5.226 24.778,3.866 24.778,2.188L24.778,0L21.334,0Z" />
+        </svg>
+      );
     case "vercel": return <Logo mono={<Icon29 variant="mono" className="size-full [&_path]:fill-current" />} color={<><Icon29 variant="light" className="size-full dark:hidden" /><Icon29 variant="dark" className="hidden size-full dark:block" /></>} />;
     case "posthog": return <Logo mono={<Icon30 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon30 fill="#000" className="size-full" />} />;
     case "google-search-console": return <Logo mono={<Icon31 variant="mono" className="size-full [&_path]:fill-current" />} color={<Icon31 className="size-full" />} />;
